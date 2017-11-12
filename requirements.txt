@@ -1,0 +1,8 @@
+#install and setup mysql using same database details in settings.py
+sudo apt-get install mysql-server
+sudo apt-get install libmysqlclient-dev
+pip install mysqlclient
+pip install Django
+pip install djangorestframework
+pip install markdown
+pip install django-filter
