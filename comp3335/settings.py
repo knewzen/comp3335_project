@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'comp3335.dashboard',
     'comp3335.account',
     'comp3335.course',
+    'comp3335.message',
 ]
 
 MIDDLEWARE = [
