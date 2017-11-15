@@ -4,14 +4,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return render(request, 'dashboard/board/index.html', {'page_title': 'Courses'})
+    test_courses = ['COMP3335', 'COMP3421']
+    return render(request, 'dashboard/board/index.html', {'courses': test_courses})
 
-def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
-
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
-
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
+def coursedetail(request, course_id):
+    return render(request, 'dashboard/board/coursedetail.html', {'course_id': course_id})
