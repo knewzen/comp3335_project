@@ -1,0 +1,76 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %} My Course {% endblock %}
+
+{% block content %}
+<style>
+    ul{
+        list-style-type: none;
+    }
+
+</style>
+
+    <main role="main" class="container">
+        <h1>{{course_id}}</h1>
+
+        <h3>Discussion</h3>
+        <div id="board">
+
+        </div>
+
+        <hr>
+
+        <form action="/getmessage/" method="post" id ="messageForm">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="message">Message </label> <br>
+                <input id="message" type="textarea" name="message" class="form-control">
+                <br>
+                <input type="submit" value="Send" class="btn btn-info">
+            </div>
+        </form>
+
+    </main>
+
+{% endblock %}
+
+{% block javascript %}
+  <script>
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+
+    $("#messageForm").submit(function(e) {
+        event.preventDefault();
+        token = jQuery("[name=csrfmiddlewaretoken]").val();
+
+        $.ajax({
+            url: '/dashboard/getmessage/',
+            data: {
+                'course_id': '{{course_id}}',
+                'message': $('#message').val()
+            },
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", token);
+                }
+            },
+            method: 'post',
+            success: function (data) {
+                var items = [];
+                $.each( data, function( key, val ) {
+                    items.push( "<li>"+ val + "</li>" );
+                    console.log($('#message').val());
+                });
+                $html = "<ul>"+items.join( "" )+"</ul>";
+                $('#board').html($html);
+            }
+        });
+
+        $('#message').val('');
+
+
+    });
+  </script>
+{% endblock %}
