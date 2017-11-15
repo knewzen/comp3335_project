@@ -1,0 +1,21 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %} Courses {% endblock %}
+
+{% block content %}
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+            <h1>Courses</h1>
+            <p class="lead">Welcome to Database Security Course Project.<br> Please Select Your Course</p>
+
+            {% for post in posts %}
+                <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
+                {{ post.body|truncatewords:30|linebreaks }}
+            {% endfor %}
+
+      </div>
+    </main>
+
+{% endblock %}
