@@ -25,7 +25,7 @@ SECRET_KEY = '2wg*!d*pb+c6t=$1l-q^=^nengug3^^u&+!udv^70-%wz%m8-@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['128.199.130.241']
 
 
 # Application definition
@@ -81,7 +81,7 @@ DATABASES = {
         'USER': 'testing',
         'PASSWORD': 'tanaka',
         'HOST': '128.199.130.241',
-        'PORT': '3306',
+        'PORT': '',
     }
 }
 
@@ -123,3 +123,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
