@@ -18,7 +18,7 @@
         {% else %}
             <div class="list-group">
                 {% for course in courses %}
-                    <a href="{{course}}" class="list-group-item list-group-item-action">{{ course }}</a>
+                    <a href="/dashboard/{{course}}" class="list-group-item list-group-item-action">{{ course }}</a>
                 {% endfor %}
             </div>
         {% endif %}
