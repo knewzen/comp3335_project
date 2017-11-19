@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "welcome/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "welcome/custom.css" %}" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">E-Learning</h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link" href="#">Login</a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Welcome To Our Page</h1>
+            <p class="lead">This is a platform that students can share their opinions about their courses.</p>
+            <p class="lead">
+              <a href="#" class="btn btn-lg btn-info">Register</a>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+                <hr>
+                <p>COMP3335 Database Security Project</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    {% block javascript %}{% endblock %}
+</body>
+</html>
