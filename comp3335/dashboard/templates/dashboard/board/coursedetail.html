@@ -11,11 +11,12 @@
 </style>
 
     <main role="main" class="container">
-        <h1>{{course_id}}</h1>
+        <h1>{{course.code}} {{course.name}}</h1>
 
-        <h3>Discussion</h3>
         <div id="board">
-
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
         </div>
 
         <hr>
