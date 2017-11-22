@@ -7,22 +7,20 @@
     <main role="main" class="container">
 
         <div class="jumbotron">
-            <h1>Courses</h1>
-            <p class="lead">New user?<br> Please Select Your Course</p>
+            <h1>Login</h1>
+            <p class="lead">New user?<br> Please click <a href="/account/register.html">here</a> to register an account</p>
+
+            <form action="/account/auth/" method="post">
+              {% csrf_token %}
+              Email:<br>
+              <input type="text" name="email"><br>
+              Password:<br>
+              <input type="password" name="password">
+              <input type="submit" value="Login">
+            </form>
         </div>
 
-        {% if not courses %}
-            <div class="alert alert-warning" role="alert">
-                You did not enroll any courses
-            </div>
-        {% else %}
-            <div class="list-group">
-                {% for course in courses %}
-                    <a href="/dashboard/{{course}}" class="list-group-item list-group-item-action">{{ course }}</a>
-                {% endfor %}
-            </div>
-        {% endif %}
-
+        
     </main>
 
 {% endblock %}
