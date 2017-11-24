@@ -4,33 +4,47 @@ from Crypto import Random
 from Crypto.Cipher import AES
 import random
 ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+key1 = "th1keyshou1dbk3ptsdcr2t"
+bs = 32
+key = hashlib.sha256(key1.encode()).digest()
 
-class AESCipher(object):
+def _pad(s):
+    return s + (bs - len(s) % bs) * chr(bs - len(s) % bs)
 
-    def __init__(self, key): 
-        self.bs = 32
-        self.key = hashlib.sha256(key.encode()).digest()
+def _unpad(s):
+    return s[:-ord(s[len(s)-1:])]
 
-    def encrypt(self, raw):
-        raw = self._pad(raw)
-        iv = Random.new().read(AES.block_size)
-        cipher = AES.new(self.key, AES.MODE_CBC, iv)
-        return base64.b64encode(iv + cipher.encrypt(raw))
+def msg_encrypt(raw):
+    raw = _pad(raw)
+    iv = Random.new().read(AES.block_size)
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    text = str(base64.b64encode(iv + cipher.encrypt(raw)), 'utf-8')
+    return text
 
-    def decrypt(self, enc):
-        enc = base64.b64decode(enc)
-        iv = enc[:AES.block_size]
-        cipher = AES.new(self.key, AES.MODE_CBC, iv)
-        return self._unpad(cipher.decrypt(enc[AES.block_size:])).decode('utf-8')
+def msg_decrypt(enc):
+    enc = base64.b64decode(enc)
+    iv = enc[:AES.block_size]
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    return _unpad(cipher.decrypt(enc[AES.block_size:])).decode('utf-8')
 
-    def _pad(self, s):
-        return s + (self.bs - len(s) % self.bs) * chr(self.bs - len(s) % self.bs)
+def transform(key):
+	return hashlib.sha256(key.encode()).digest()
 
-    @staticmethod
-    def _unpad(s):
-        return s[:-ord(s[len(s)-1:])]
+def encrypt(raw, input_key):
+    raw = _pad(raw)
+    key = trim(input_key)
+    iv = Random.new().read(AES.block_size)
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    text = str(base64.b64encode(iv + cipher.encrypt(raw)), 'utf-8')
+    return text
 
-c = AESCipher('shittyshittybangbang')
+def decrypt(enc, input_key):
+	enc = base64.b64decode(enc)
+	key = transform(input_key)
+	iv = enc[:AES.block_size]
+	cipher = AES.new(key, AES.MODE_CBC, iv)
+	return _unpad(cipher.decrypt(enc[AES.block_size:])).decode('utf-8')
+
 
 def hash_func(password, salt):
 	new = password + salt
@@ -46,10 +60,6 @@ def generate_salt():
 		salt = salt + random.choice(ALPHABET)
 	return salt
 
-
-
-
-
 def main():
 	pwd = "thereisnocipher"
 
@@ -59,8 +69,9 @@ def main():
 	print(storage)
 	while True:
 		a = input()
-		encrypted = c.encrypt(a)
-		decrypted = c.decrypt(encrypted)
+		encrypted = msg_encrypt(a)
+		decrypted = msg_decrypt(encrypted)
+		print(type(encrypted), len(decrypted))
 		print(a + " is encrypted as ")
 		print(encrypted)
 		print(" is decrypted as " + decrypted)
