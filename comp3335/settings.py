@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['128.199.130.241', '127.0.0.1']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'comp3335.welcome',
     'comp3335.dashboard',
     'comp3335.account',
     'comp3335.course',

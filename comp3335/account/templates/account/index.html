@@ -1,4 +1,4 @@
-{% extends "dashboard/base.html" %}
+{% extends "account/base.html" %}
 
 {% block title %} Courses {% endblock %}
 
@@ -8,7 +8,7 @@
 
         <div class="jumbotron">
             <h1>Courses</h1>
-            <p class="lead">Welcome to Database Security Course Project.<br> Please Select Your Course</p>
+            <p class="lead">New user?<br> Please Select Your Course</p>
         </div>
 
         {% if not courses %}
@@ -18,7 +18,7 @@
         {% else %}
             <div class="list-group">
                 {% for course in courses %}
-                    <a href="/dashboard/{{course.code}}" class="list-group-item list-group-item-action">{{ course.name }}</a>
+                    <a href="/dashboard/{{course}}" class="list-group-item list-group-item-action">{{ course }}</a>
                 {% endfor %}
             </div>
         {% endif %}
