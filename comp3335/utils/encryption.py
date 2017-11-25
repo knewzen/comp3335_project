@@ -5,9 +5,7 @@ from Crypto.Cipher import AES
 import random
 ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 key1 = "th1keyshou1dbk3ptsdcr2t"
-
 bs = AES.block_size
-
 key = hashlib.sha256(key1.encode()).digest()
 
 def _pad(s):
@@ -35,7 +33,6 @@ def msg_decrypt(enc):
 	    return _unpad(cipher.decrypt(enc[AES.block_size:])).decode('utf-8')
 	except ValueError:
 		return ""
-
 def transform(key):
 	return hashlib.sha256(key.encode()).digest()
 

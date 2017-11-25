@@ -12,7 +12,6 @@ from comp3335.account.models import Account
 def search(request):
 	course1 = request.POST["course"]
 	msg1 = request.POST["msg"]
-	
 	courseResult = Course.objects.all()
 	msgResult = Message.objects.all()
 
@@ -32,4 +31,3 @@ def search(request):
 
 	context = {"course":c,"msg":m}
 	return render(request,'search/SearchResult.html',context)
-	
