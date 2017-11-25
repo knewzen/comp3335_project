@@ -5,7 +5,7 @@ from Crypto.Cipher import AES
 import random
 ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 key1 = "th1keyshou1dbk3ptsdcr2t"
-bs = 32
+bs = 16
 key = hashlib.sha256(key1.encode()).digest()
 
 def _pad(s):
@@ -65,6 +65,7 @@ def main():
 
 	salt = generate_salt()
 
+	print(msg_decrypt("EO1qoA/0f/BC3sGU55GiDhhT7UU1v1vZshMMoe0hD6c3zt2LanfE5fmMJq7BQOmS"))
 	storage = [salt, hash_func(pwd, salt)]
 	print(storage)
 	while True:
