@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from comp3335.utils.encryption import *
+from django.views.decorators.csrf import csrf_exempt
 from .forms import RegisterForm
 from django.http import HttpResponseRedirect
+from comp3335.account.models import Account
 # Create your views here.
 
+@csrf_exempt
 def register(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -22,9 +25,20 @@ def register(request):
 
     return render(request, '/account/', {'form': form})
 
-
+@csrf_exempt
 def auth(request):
-    print(request.POST["email"])
-    print(request.POST["password"])    
 
-    return HttpResponseRedirect('/account/') 
+    username = request.POST["email"]
+    pwd = request.POST["password"]    
+
+
+    iden = Account.objects.filter(email=username)
+
+    context = {"uesrname":iden}
+
+    match = False
+
+    if match:
+        return render(request, 'account/success.html', context)
+    else:
+        return render(request, 'account/index.html', context) 

@@ -1,6 +1,6 @@
 {% extends "account/base.html" %}
 
-{% block title %} Courses {% endblock %}
+{% block title %} Login {% endblock %}
 
 {% block content %}
 
@@ -10,7 +10,7 @@
             <h1>Login</h1>
             <p class="lead">New user?<br> Please click <a href="/account/register.html">here</a> to register an account</p>
 
-            <form action="/account/auth/" method="post">
+            <form action="auth" method="post">
               {% csrf_token %}
               Email:<br>
               <input type="text" name="email"><br>
