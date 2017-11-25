@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'comp3335.account',
     'comp3335.course',
     'comp3335.message',
+    'comp3335.search',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'comp3335.urls'
 

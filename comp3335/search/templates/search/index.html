@@ -1,0 +1,28 @@
+{% extends "search/base.html" %}
+
+{% block title %} Courses {% endblock %}
+
+{% block content %}
+
+    <main role="main" class="container">
+
+        <div style="text-align:center">
+        <h1>Search</h1>
+        <form action="data" method="post">
+            Course Information:<br>
+            <input type="text" name="course" maxlength="20" placeholder="Code/Name" size = "20" required>
+            <br>
+            Messages:<br>
+            <input type="text" name="msg" size="20" maxlength="50">
+            <br><br>
+            <input type="submit" value="Search">
+            <input type="reset">
+        </form>
+        <p>You can search any course and the messages posted by the other users.</p>
+        </div>
+
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+    </main>
+
+{% endblock %}

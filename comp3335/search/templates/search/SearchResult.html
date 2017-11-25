@@ -1,0 +1,33 @@
+{% extends "search/base.html" %}
+
+{% block title %} Courses {% endblock %}
+
+{% block content %}
+	<main role="main" class="container">
+		<div>
+			<table>
+			{% for C in course%}
+			<tr>
+				<td>{{C.name}}</td>
+				<td>{{C.code}}</td>
+
+			</tr>
+			{% endfor %}
+
+			</table>			
+			<ul>{% for M in msg %}
+				<li>
+					<ul>
+					<li>{{M.id}}</li>
+					<li>{{M.text}}</li>
+					<li>{{M.course_id}}</li>
+					<li>{{M.user_id}}</li>
+					</ul>
+				</li>
+			{% endfor %}
+			</ul>
+		</div>
+	</main>
+{% endblock %}
+
+
