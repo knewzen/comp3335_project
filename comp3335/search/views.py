@@ -19,16 +19,15 @@ def search(request):
 	m = []
 
 	for course in courseResult:
-	#print("look----->",course.name)
+		#print("look----->",course.name)
 		course.name = msg_decrypt(course.name)
-	if course1 in course.name or course1 in course.code:
-		c.append({"name": course.name, "code":course.code})
+		if course1 in course.name or course1 in course.code:
+			c.append({"name": course.name, "code":course.code})
 
 	for msg in msgResult:
 		msg.text = msg_decrypt(msg.text)
-	if msg1 in msg.text:
-		m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
+		if msg1 in msg.text:
+			m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
 
 	context = {"course":c,"msg":m}
-	
 	return render(request,'search/SearchResult.html',context)

@@ -14,15 +14,18 @@
 			</tr>
 			{% endfor %}
 
-			</table>
-
-			
-			{% for M in msg %}
-				{{M.id}}
-				{{M.text}}
-				{{M.course_id}}
-				{{M.user_id}}
+			</table>			
+			<ul>{% for M in msg %}
+				<li>
+					<ul>
+					<li>{{M.id}}</li>
+					<li>{{M.text}}</li>
+					<li>{{M.course_id}}</li>
+					<li>{{M.user_id}}</li>
+					</ul>
+				</li>
 			{% endfor %}
+			</ul>
 		</div>
 	</main>
 {% endblock %}

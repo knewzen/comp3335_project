@@ -20,5 +20,8 @@ urlpatterns = [
     url(r'^search/', include('comp3335.search.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^dashboard/', include('comp3335.dashboard.urls')),
+
     url(r'^$', include('comp3335.welcome.urls')),
+    url(r'^account/', include('comp3335.account.urls')),
+    url(r'^welcome/', include('comp3335.welcome.urls')),
 ]
