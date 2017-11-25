@@ -7,42 +7,28 @@ from comp3335.message.models import Message
 from comp3335.utils.encryption import *
 from comp3335.account.models import Account
 
-
 # Create your views here.
 @csrf_exempt
 def search(request):
-	course = msg_encrypt(request.POST["course"])
-	msg = msg_encrypt(request.POST["msg"])
-	
-
-	print(course, msg)
-	#course_encrypted = course_encrypt(course)
-	#courseResult = Course.objects.all()
-	# id code name
-	# id text course_id user_id
-	#filer(name=)
+	course1 = request.POST["course"]
+	msg1 = request.POST["msg"]
 	courseResult = Course.objects.all()
 	msgResult = Message.objects.all()
 
+	c = []
+	m = []
+
 	for course in courseResult:
+	#print("look----->",course.name)
 		course.name = msg_decrypt(course.name)
-		course.code = msg_decrypt(code)
+	if course1 in course.name or course1 in course.code:
+		c.append({"name": course.name, "code":course.code})
 
 	for msg in msgResult:
 		msg.text = msg_decrypt(msg.text)
+	if msg1 in msg.text:
+		m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
 
-	courseResult = courseResult.objects.filter(Q(name__icontains=course)|Q(code__icontains=course))
-	msgResult = msgResult.objects.filter(text__icontains=msg)
-
-	#courseResult = Course.objects.filter(Q(name__icontains=course)|Q(code__icontains=course))
-	#msgResult = Message.objects.filter(text__icontains=msg)
-
-
-	#User.objects.filter(Q(income__gte=5000) | Q(income__isnull=True))
-	print(dir(courseResult))
-	#context = {"Course":[{"name" : "comp2323"},{"name":"comp2222"}]}
-	#context = {"course":msg_decrypt(courseResult),"msg":msg_decrypt(msgResult)}
-	context = {"course":(courseResult),"msg":(msgResult)}
-
-	return render(request,'search/SearchResult.html',context)
+	context = {"course":c,"msg":m}
 	
+	return render(request,'search/SearchResult.html',context)
