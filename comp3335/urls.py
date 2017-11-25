@@ -22,4 +22,5 @@ urlpatterns = [
 
     url(r'^$', include('comp3335.welcome.urls')),
     url(r'^account/', include('comp3335.account.urls')),
+    url(r'^welcome/', include('comp3335.welcome.urls')),
 ]
