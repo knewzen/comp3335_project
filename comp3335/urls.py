@@ -21,5 +21,5 @@ urlpatterns = [
     url(r'^dashboard/', include('comp3335.dashboard.urls')),
 
     url(r'^$', include('comp3335.welcome.urls')),
-
+    url(r'^account/', include('comp3335.account.urls')),
 ]
