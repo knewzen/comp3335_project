@@ -8,25 +8,26 @@
         <div class="jumbotron">
             <h1>Registration</h1>
             <p class="lead">Account registration</p>
+            <form action="register" method="post">
+            {% csrf_token %}
+            Email:<br>
+            <input type="text" name="email"><br>
+            First name:<br>
+            <input type="text" name="f_name"><br>
+            Last name:<br>
+            <input type="text" name="l_name"><br>
+            Age:<br>
+            <input type="text" name="age"><br>
+
+            Password:<br>
+            <input type="password" name="password"><br>
+            Re-type Password:<br>
+            <input type="password" name="password2"><br>
+            <input type="submit" value="Register">
+          </form>
         </div>
 
-        <form action="register" method="post">
-          {% csrf_token %}
-          Email:<br>
-          <input type="text" name="email"><br>
-          First name:<br>
-          <input type="text" name="f_name"><br>
-          Last name:<br>
-          <input type="text" name="l_name"><br>
-          Age:<br>
-          <input type="text" name="age"><br>
-
-          Password:<br>
-          <input type="password" name="password"><br>
-          Re-type Password:<br>
-          <input type="password" name="password2"><br>
-          <input type="submit" value="Register">
-        </form>
+        
     </main>
 
 {% endblock %}
