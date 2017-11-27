@@ -21,13 +21,13 @@ def _unpad(s):
 def msg_encrypt(raw):
 	try:
 	    raw = _pad(raw) 
-
 	    iv = Random.new().read(AES.block_size)
 	    cipher = AES.new(key, AES.MODE_CBC, iv)
 	    text = str(base64.b64encode(iv + cipher.encrypt(raw)), 'utf-8')
 	    return text
 	except ValueError:
 		return ""
+
 
 def msg_decrypt(enc):
 	try:
@@ -90,6 +90,7 @@ def main():
 		encrypted = msg_encrypt(a)
 		decrypted = msg_decrypt(encrypted)
 		print(type(encrypted), len(decrypted))
+
 
 		#print(a + " is encrypted as ")
 

@@ -8,10 +8,11 @@
 
         <div class="jumbotron">
             <h1>Login</h1>
-            <p class="lead">New user?<br> Please click <a href="/account/register.html">here</a> to register an account</p>
+            <p class="lead">New user?<br> Please click <a href="/account/register">here</a> to register an account</p>
 
             <form action="auth" method="post">
               {% csrf_token %}
+
               Email:<br>
               <input type="text" name="email"><br>
               Password:<br>

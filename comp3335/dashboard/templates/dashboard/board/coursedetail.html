@@ -15,7 +15,7 @@
 
         <div id="board">
             {% for message in messages %}
-                <p>{{message}}</p>
+                <p>{{message.text}}</p>
             {% endfor %}
         </div>
 
@@ -49,7 +49,8 @@
         $.ajax({
             url: '/dashboard/getmessage/',
             data: {
-                'course_id': '{{course_id}}',
+                'course_id': '{{course.id}}',
+                'course_code': '{{course.code}}',
                 'message': $('#message').val()
             },
             beforeSend: function(xhr, settings) {

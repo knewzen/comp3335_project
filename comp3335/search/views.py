@@ -31,4 +31,10 @@ def search(request):
 
 	context = {"course":c,"msg":m}
 	return render(request,'search/SearchResult.html',context)
+<<<<<<< HEAD
 	
+=======
+
+	
+
+>>>>>>> ed7ea8158678fd81d1112ce91f9066120fa28863
