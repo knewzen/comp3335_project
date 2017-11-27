@@ -30,12 +30,14 @@ def register(request):
         pwd_hash = hash_func(pwd1, salt)
         acct = Account(email=email, f_name = f_name, l_name = l_name, age=age, pwd_hash = pwd_hash, salt = salt)
         acct.save()
+        return render(request, 'account/index.html', {})
     # if a GET (or any other method) we'll create a blank form
     else:
-        pass
-
-    return render(request, 'account/index.html', {})
+        form = RegisterForm()
+        return render(request, 'account/register.html', {"form" : form})
+    
 @csrf_exempt
+
 def auth(request):
 
     username = msg_encrypt(request.POST["email"])
