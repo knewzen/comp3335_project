@@ -5,7 +5,11 @@ from Crypto.Cipher import AES
 import random
 ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 key1 = "th1keyshou1dbk3ptsdcr2t"
+
+
 bs = AES.block_size
+
+
 key = hashlib.sha256(key1.encode()).digest()
 
 def _pad(s):
@@ -17,13 +21,13 @@ def _unpad(s):
 def msg_encrypt(raw):
 	try:
 	    raw = _pad(raw) 
-
 	    iv = Random.new().read(AES.block_size)
 	    cipher = AES.new(key, AES.MODE_CBC, iv)
 	    text = str(base64.b64encode(iv + cipher.encrypt(raw)), 'utf-8')
 	    return text
 	except ValueError:
 		return ""
+
 
 def msg_decrypt(enc):
 	try:
@@ -33,13 +37,14 @@ def msg_decrypt(enc):
 	    return _unpad(cipher.decrypt(enc[AES.block_size:])).decode('utf-8')
 	except ValueError:
 		return ""
+
 def transform(key):
 	return hashlib.sha256(key.encode()).digest()
 
 def encrypt(raw, input_key):
 	try:
 	    raw = _pad(raw)
-	    key = trim(input_key)
+	    key = transform(input_key)
 	    iv = Random.new().read(AES.block_size)
 	    cipher = AES.new(key, AES.MODE_CBC, iv)
 	    text = str(base64.b64encode(iv + cipher.encrypt(raw)), 'utf-8')
