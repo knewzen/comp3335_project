@@ -14,6 +14,7 @@
 			</tr>
 			{% endfor %}
 
+<<<<<<< HEAD
 			</table>
 
 			
@@ -23,6 +24,20 @@
 				{{M.course_id}}
 				{{M.user_id}}
 			{% endfor %}
+=======
+			</table>			
+			<ul>{% for M in msg %}
+				<li>
+					<ul>
+					<li>{{M.id}}</li>
+					<li>{{M.text}}</li>
+					<li>{{M.course_id}}</li>
+					<li>{{M.user_id}}</li>
+					</ul>
+				</li>
+			{% endfor %}
+			</ul>
+>>>>>>> 23db60383a5900f58710e23ea9f5fe5ab129dc8f
 		</div>
 	</main>
 {% endblock %}
