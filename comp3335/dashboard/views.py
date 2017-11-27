@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from comp3335.course.models import Course
 from comp3335.message.models import Message
+from comp3335.utils.encryption import *
 
 import logging
 
@@ -13,6 +14,8 @@ logging.basicConfig(filename='log/test.log', level=logging.INFO,format='%(asctim
 def index(request):
     # get courses from database
     test_courses= Course.objects.all()
+    for c in test_courses:
+        c.name = msg_decrypt(c.name)
     logging.info('request course list for dashboard')
 
     return render(request, 'dashboard/board/index.html', {'courses': test_courses})
@@ -21,6 +24,9 @@ def coursedetail(request, course_id):
     course = Course.objects.filter(code=course_id)
     if course:
         messages = Message.objects.filter(course_id=course[0].id)
+        for m in messages:
+            m.text = msg_decrypt(m.text)
+        course[0].name = msg_decrypt(course[0].name)
         logging.info("request course detail success: course code = " + course_id)
     else:
         logging.warn("request course detail failed: course code = " + str(course_id))
