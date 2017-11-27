@@ -6,7 +6,9 @@ import random
 ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 key1 = "th1keyshou1dbk3ptsdcr2t"
 
+
 bs = AES.block_size
+
 
 key = hashlib.sha256(key1.encode()).digest()
 
@@ -19,13 +21,13 @@ def _unpad(s):
 def msg_encrypt(raw):
 	try:
 	    raw = _pad(raw) 
-
 	    iv = Random.new().read(AES.block_size)
 	    cipher = AES.new(key, AES.MODE_CBC, iv)
 	    text = str(base64.b64encode(iv + cipher.encrypt(raw)), 'utf-8')
 	    return text
 	except ValueError:
 		return ""
+
 
 def msg_decrypt(enc):
 	try:
