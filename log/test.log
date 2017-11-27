@@ -1,0 +1,210 @@
+2017-11-27 22:52:24,738:ERROR:Internal Server Error: /admin/course/course/add/
+Traceback (most recent call last):
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 647, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "/home/edward/project/lib/python3.6/site-packages/django/forms/models.py", line 563, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/forms/models.py", line 277, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (pub_date, Course_text) specified for Course
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 551, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 224, in inner
+    return view(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1508, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1408, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1437, in _changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 651, in get_form
+    % (e, self.__class__.__name__)
+django.core.exceptions.FieldError: Unknown field(s) (pub_date, Course_text) specified for Course. Check fields/fieldsets/exclude attributes of class CourseAdmin.
+2017-11-27 23:21:22,465:ERROR:Internal Server Error: /admin/course/course/add/
+Traceback (most recent call last):
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 647, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "/home/edward/project/lib/python3.6/site-packages/django/forms/models.py", line 563, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/forms/models.py", line 277, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (pub_date, Course_text) specified for Course
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 551, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 224, in inner
+    return view(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1508, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1408, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1437, in _changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 651, in get_form
+    % (e, self.__class__.__name__)
+django.core.exceptions.FieldError: Unknown field(s) (pub_date, Course_text) specified for Course. Check fields/fieldsets/exclude attributes of class CourseAdmin.
+2017-11-27 23:21:33,184:ERROR:Internal Server Error: /admin/course/course/add/
+Traceback (most recent call last):
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 647, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "/home/edward/project/lib/python3.6/site-packages/django/forms/models.py", line 563, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/forms/models.py", line 277, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (pub_date, Course_text) specified for Course
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 551, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 224, in inner
+    return view(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1508, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1408, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1437, in _changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 651, in get_form
+    % (e, self.__class__.__name__)
+django.core.exceptions.FieldError: Unknown field(s) (pub_date, Course_text) specified for Course. Check fields/fieldsets/exclude attributes of class CourseAdmin.
+2017-11-27 23:21:46,678:ERROR:Internal Server Error: /admin/course/course/add/
+Traceback (most recent call last):
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 647, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "/home/edward/project/lib/python3.6/site-packages/django/forms/models.py", line 563, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/forms/models.py", line 277, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (pub_date, Course_text) specified for Course
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 551, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 224, in inner
+    return view(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1508, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1408, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1437, in _changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 651, in get_form
+    % (e, self.__class__.__name__)
+django.core.exceptions.FieldError: Unknown field(s) (pub_date, Course_text) specified for Course. Check fields/fieldsets/exclude attributes of class CourseAdmin.
+2017-11-27 23:24:42,952:ERROR:Internal Server Error: /admin/course/course/add/
+Traceback (most recent call last):
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 647, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "/home/edward/project/lib/python3.6/site-packages/django/forms/models.py", line 563, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/forms/models.py", line 277, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (pub_date, Course_text) specified for Course
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/edward/project/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 551, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 224, in inner
+    return view(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1508, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/edward/project/lib/python3.6/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1408, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1437, in _changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/edward/project/lib/python3.6/site-packages/django/contrib/admin/options.py", line 651, in get_form
+    % (e, self.__class__.__name__)
+django.core.exceptions.FieldError: Unknown field(s) (pub_date, Course_text) specified for Course. Check fields/fieldsets/exclude attributes of class CourseAdmin.
