@@ -44,7 +44,7 @@ def transform(key):
 def encrypt(raw, input_key):
 	try:
 	    raw = _pad(raw)
-	    key = trim(input_key)
+	    key = transform(input_key)
 	    iv = Random.new().read(AES.block_size)
 	    cipher = AES.new(key, AES.MODE_CBC, iv)
 	    text = str(base64.b64encode(iv + cipher.encrypt(raw)), 'utf-8')
