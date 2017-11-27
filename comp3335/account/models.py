@@ -7,4 +7,4 @@ class Account(models.Model):
     salt = models.CharField(max_length=255, null=False) #noEncrypt
     f_name = models.CharField(max_length=90, null=False)
     l_name = models.CharField(max_length=90, null=False)
-    age = models.CharField(max_length=10,null=False)
+    age = models.CharField(max_length=64,null=False)
