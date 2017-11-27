@@ -13,4 +13,4 @@ class Account(models.Model):
     history = audit.AuditTrail()
 
     def __str__(self):
-        return self.f_name + self.l_name
+        return self.f_name + "*********"+ self.l_name
