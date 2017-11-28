@@ -970,3 +970,63 @@ NameError: name 'msg_decrypted' is not defined
 2017-11-28 22:29:57,358:INFO:insert message: course code = COMP1111, message = asd
 2017-11-28 22:29:57,902:INFO:insert message: course code = COMP1111, message = fa
 2017-11-28 22:30:29,777:INFO:insert message: course code = COMP1111, message = hhh
+2017-11-28 22:34:27,433:INFO:insert message: course code = COMP1111, message = asdfsda
+2017-11-28 22:34:27,456:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 88, in getmessage
+    for ms in msgResult[:-2]:
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 269, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+2017-11-28 22:34:30,726:INFO:request course detail success: course code = COMP1111
+2017-11-28 22:34:37,000:INFO:insert message: course code = COMP1111, message = asdjfl
+2017-11-28 22:34:37,008:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 88, in getmessage
+    for ms in msgResult[:-2]:
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 269, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+2017-11-28 22:34:43,902:INFO:insert message: course code = COMP1111, message = ads;lka;sdk
+2017-11-28 22:34:43,905:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 88, in getmessage
+    for ms in msgResult[:-2]:
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 269, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+2017-11-28 22:34:47,491:INFO:insert message: course code = COMP1111, message = afsdaf
+2017-11-28 22:34:47,571:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 88, in getmessage
+    for ms in msgResult[:-2]:
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 269, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+2017-11-28 22:35:49,979:INFO:request course list for dashboard
+2017-11-28 22:35:55,655:INFO:request course detail success: course code = COMP1111
+2017-11-28 22:36:05,927:INFO:insert message: course code = COMP1111, message = asdfasdfasdf
