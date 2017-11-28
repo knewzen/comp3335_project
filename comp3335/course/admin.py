@@ -15,4 +15,4 @@ class CourseAdmin(admin.ModelAdmin):
         print(obj.code, obj.name)
         obj.save()
 
-admin.site.register(Course)
+admin.site.register(Course, CourseAdmin)

@@ -18,8 +18,6 @@ class Account(models.Model):
 
     def __str__(self):
         return msg_decrypt(self.email)
-<<<<<<< HEAD
-=======
 
 #@receiver(post_save, sender=User)
 #def create_user_profile(sender, instance, created, **kwargs):
@@ -29,5 +27,3 @@ class Account(models.Model):
 #@receiver(post_save, sender=User)
 #def save_user_profile(sender, instance, **kwargs):
 #    instance.profile.save()
-
->>>>>>> 8629db1c58e2526fbe529c45b05b0a99f19602c1
