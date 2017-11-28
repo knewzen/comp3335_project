@@ -48,8 +48,8 @@ def register(request):
             return render(request, 'account/register.html', {"err": "The passwords must match."})
         
         if not checkPassword(pwd1):
-            pass
-            #return render(request, 'account/register.html', {"err": "The password must have at least one lower case letter, one upper case letter and one digit."})
+            #pass
+            return render(request, 'account/register.html', {"err": "The password must have at least one lower case letter, one upper case letter and one digit."})
         
 
         
