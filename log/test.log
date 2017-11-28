@@ -1048,3 +1048,97 @@ Traceback (most recent call last):
   File "/home/xiating/dbsec/comp3335_project/comp3335/course/models.py", line 10, in __str__
     return msg_decrypt(self.code) + " "+ msg_decrypt(self.name)
 NameError: name 'msg_decrypt' is not defined
+2017-11-28 16:07:23,998:ERROR:Internal Server Error: /admin/course/course/add/
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.DataError: (1406, "Data too long for column 'code' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/options.py", line 551, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/sites.py", line 224, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/options.py", line 1508, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/options.py", line 1408, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/options.py", line 1448, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/xiating/dbsec/comp3335_project/comp3335/course/admin.py", line 16, in save_model
+    obj.save()
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/base.py", line 838, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/base.py", line 924, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/base.py", line 963, in _do_insert
+    using=using, raw=raw)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1107, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+django.db.utils.DataError: (1406, "Data too long for column 'code' at row 1")
+2017-11-28 16:10:22,191:INFO:request course list for dashboard
+2017-11-28 16:10:26,028:WARNING:Not Found: /dashboard/lai shi shi kan
+2017-11-28 16:13:03,584:INFO:request course list for dashboard
+2017-11-28 16:13:35,518:INFO:request course list for dashboard

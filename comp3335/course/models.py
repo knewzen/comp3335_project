@@ -5,7 +5,7 @@ from comp3335.utils.encryption import *
 
 
 class Course(models.Model):
-    code = models.CharField(max_length=30, unique=True, null=False)
+    code = models.CharField(max_length=100, unique=True, null=False)
     name = models.CharField(max_length=100, null=False)
 
 
