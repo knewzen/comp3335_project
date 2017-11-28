@@ -4,6 +4,8 @@ from django.views.decorators.csrf import csrf_exempt
 from .forms import RegisterForm
 from django.http import HttpResponseRedirect
 from comp3335.account.models import Account
+from comp3335.dashboard.views import *
+from django.shortcuts import redirect
 # Create your views here.
 
 @csrf_exempt
@@ -14,47 +16,61 @@ def register(request):
         pwd1 = request.POST["password"]
         pwd2 = request.POST["password2"]
         if pwd1 != pwd2:
-            render(request, 'account/register.html')
-        # create a form instance and populate it with data from the request:
+            #####
+            #####    add error message handling
+            #####   password not matching
+            return render(request, 'account/register.html')
+        
+        accts = Account.objects.all()
+
+        for acct in accts:
+            eemail = msg_decrypt(acct.email)
+            if request.POST["email"] == eemail:
+                #####
+                #####    add error message handling
+                #####   email already used
+                return render(request, 'account/register.html')
+
+        salt1 = generate_salt()
+        salt2 = generate_salt()
+        salt = encrypt(salt2, pwd1)
+
         email = msg_encrypt(request.POST["email"])
+        f_name = encrypt(request.POST["f_name"], salt)
+        l_name = encrypt(request.POST["l_name"], salt)
+        age = encrypt(request.POST["age"], salt)
+        pwd_hash = hash_func(pwd1, salt1)
 
-        if Account.objects.filter(email=email).exists():
-            return render(request, 'account/register.html', {})
-
-        f_name = msg_encrypt(request.POST["f_name"])
-        l_name = msg_encrypt(request.POST["l_name"])
-        age = msg_encrypt(request.POST["age"])
-
-        salt = generate_salt()
-
-        pwd_hash = hash_func(pwd1, salt)
-        acct = Account(email=email, f_name = f_name, l_name = l_name, age=age, pwd_hash = pwd_hash, salt = salt)
+        
+        acct = Account(email=email, f_name = f_name, l_name = l_name, age=age, pwd_hash = pwd_hash, salt1 = salt1, salt2 = salt2)
         acct.save()
-        return render(request, 'account/index.html', {})
+        p_hist = acct.history.all()
+        print(p_hist)
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = RegisterForm()
-        return render(request, 'account/register.html', {"form" : form})
-    
+        return render(request, 'account/register.html', {})
+
+    return render(request, 'account/index.html', {})
 @csrf_exempt
 
 def auth(request):
 
-    username = msg_encrypt(request.POST["email"])
+    username = request.POST["email"]
     pwd = request.POST["password"]    
 
-    print("*"*100)
-    if not Account.objects.filter(email=username).exists():
-        print("fail")
-        return render(request, 'account/index.html', {}) 
-    print("*"*100)
-    iden = Account.objects.get(email=username)
+    accts = Account.objects.all()
+
+    for acct in accts:
+        eemail = msg_decrypt(acct.email)
+        if eemail == username:
+            if hash_func(pwd, acct.salt1) == acct.pwd_hash:
+                print("Success")
+                p_hist = acct.history.all()
+                print(p_hist)
+                return redirect('/dashboard')
     
-    if hash_func(pwd, iden.salt) == iden.pwd_hash:
-        print("success")
-        return render(request, 'account/index.html', {})
-    else:
-        print("fail")
-        return render(request, 'account/index.html', {}) 
+    
+    print("fail")
+    return render(request, 'account/index.html', {}) 
     
         
