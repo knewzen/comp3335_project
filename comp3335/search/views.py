@@ -13,8 +13,6 @@ def search(request):
 	course1 = request.POST["course"]
 	msg1 = request.POST["msg"]
 
-	
-
 	courseResult = Course.objects.all()
 	msgResult = Message.objects.all()
 
@@ -22,7 +20,6 @@ def search(request):
 	m = []
 
 	for course in courseResult:
-		#print("look----->",course.name)
 		course.name = msg_decrypt(course.name)
 		if course1 in course.name or course1 in course.code:
 			c.append({"name": course.name, "code":course.code})
@@ -34,6 +31,3 @@ def search(request):
 
 	context = {"course":c,"msg":m}
 	return render(request,'search/SearchResult.html',context)
-
-	
-

@@ -7,7 +7,7 @@
 
     <style>
         .footer {
-              position: absolute;
+              position: relative;
               bottom: 0;
               width: 100%;
               height: 60px; /* Set the fixed height of the footer here */
@@ -27,11 +27,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
+                <li {% if request.path == '/' %} class="active" {% endif %} >
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
 
-                <li class="nav-item active">
+                <li {% if request.path == '/dashboard/' %} class="active" {% endif %}>
                     <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
                 </li>
                 <!--<li class="nav-item">-->

@@ -90,7 +90,10 @@ def main():
 		encrypted = msg_encrypt(a)
 		decrypted = msg_decrypt(encrypted)
 		print(type(encrypted), len(decrypted))
+
+
 		#print(a + " is encrypted as ")
+
 		print(encrypted)
 		#print(" is decrypted as " + decrypted)
 		

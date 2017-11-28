@@ -18,13 +18,18 @@
             <input type="text" name="l_name"><br>
             Age:<br>
             <input type="text" name="age"><br>
-
-            Password:<br>
-            <input type="password" name="password"><br>
+            Password: <br>
+            <input type="password" name="password">         You password must contain at least one digit, one lower case letter and one upper case letter.<br>
             Re-type Password:<br>
             <input type="password" name="password2"><br>
             <input type="submit" value="Register">
           </form>
+          {% if err %}
+          <br>
+            <div class="alert alert-warning" role="alert">
+                {{ err }}
+            </div>
+            {% endif %}
         </div>
 
         

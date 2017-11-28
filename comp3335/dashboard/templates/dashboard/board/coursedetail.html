@@ -14,12 +14,18 @@
         <h1>{{course.code}} {{course.name}}</h1>
 
         <div id="board">
+            <table>
             {% for message in messages %}
-                <p>{{message.text}}</p>
+                {{message.text}} 
             {% endfor %}
+            </table>
         </div>
 
         <hr>
+
+        <form action="/getmessage/">
+            
+        </form>
 
         <form action="/getmessage/" method="post" id ="messageForm">
             {% csrf_token %}
@@ -27,10 +33,10 @@
                 <label for="message">Message </label> <br>
                 <input id="message" type="textarea" name="message" class="form-control">
                 <br>
+                <input id="course_code" type="textarea" name="course_code" style="display:none" class="form-control">
                 <input type="submit" value="Send" class="btn btn-info">
             </div>
         </form>
-
     </main>
 
 {% endblock %}

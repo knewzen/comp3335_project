@@ -7,4 +7,6 @@ urlpatterns = [
     url(r'^register.html', TemplateView.as_view(template_name = 'account/register.html'), name='register'),
     url(r'^register$',views.register),
     url(r'^auth$',views.auth),
+    url(r'^dashboard/index.html', TemplateView.as_view(template_name = 'dashboard/index.html'), name='register'),
+    
 ]
