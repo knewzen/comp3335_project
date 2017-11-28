@@ -1,7 +1,7 @@
 from django.db import models
 import audit
 from django.contrib.auth.models import User
-
+from comp3335.utils.encryption import *
 
 # Create your models here.
 class Account(models.Model):
@@ -17,7 +17,7 @@ class Account(models.Model):
     history = audit.AuditTrail()
 
     def __str__(self):
-        return self.f_name + "*********"+ self.l_name
+        return msg_decrypt(self.email) + " owns " + "password hash: " + self.pwd_hash + ", firstname encrypted: " + self.f_name + ", lastname encrypted: " + self.l_name
 
 #@receiver(post_save, sender=User)
 #def create_user_profile(sender, instance, created, **kwargs):
