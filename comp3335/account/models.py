@@ -1,13 +1,11 @@
-<<<<<<< HEAD
-=======
 from django.db import models
 import audit
 from django.contrib.auth.models import User
-
+from comp3335.utils.encryption import *
 
 # Create your models here.
 class Account(models.Model):
-    email = models.EmailField(unique=True,null=False) #noEncrypt
+    email = models.CharField(unique=True,max_length=255,null=False) #noEncrypt
     pwd_hash = models.CharField(max_length=255, null=False) #noEncrypt
     salt1 = models.CharField(max_length=255, null=False) #noEncrypt
     salt2 = models.CharField(max_length=255, null=False)
@@ -19,15 +17,4 @@ class Account(models.Model):
     history = audit.AuditTrail()
 
     def __str__(self):
-        return self.f_name + "*********"+ self.l_name
-
-#@receiver(post_save, sender=User)
-#def create_user_profile(sender, instance, created, **kwargs):
-#    if created:
-#        Profile.objects.create(user=instance)
-
-#@receiver(post_save, sender=User)
-#def save_user_profile(sender, instance, **kwargs):
-#    instance.profile.save()
-
->>>>>>> aa83ce88b36a31457006c2d612c552db628ac365
+        return msg_decrypt(self.email)
