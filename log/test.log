@@ -1030,3 +1030,47 @@ AssertionError: Negative indexing is not supported.
 2017-11-28 22:35:49,979:INFO:request course list for dashboard
 2017-11-28 22:35:55,655:INFO:request course detail success: course code = COMP1111
 2017-11-28 22:36:05,927:INFO:insert message: course code = COMP1111, message = asdfasdfasdf
+2017-11-29 00:32:34,206:ERROR:Internal Server Error: /search/data
+Traceback (most recent call last):
+  File "/home/ivan/dbs-proj/comp3335/search/views.py", line 14, in search
+    authorized = request.session['authorized']
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/contrib/sessions/backends/base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'authorized'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/search/views.py", line 16, in search
+    return redirect('/account/register.html')
+NameError: name 'redirect' is not defined
+2017-11-29 00:34:40,716:INFO:request course list for dashboard
+2017-11-29 00:34:45,215:INFO:request course detail success: course code = COMP1111
+2017-11-29 00:34:52,728:WARNING:Not Found: /dashboard/search
+2017-11-29 00:41:23,446:ERROR:Internal Server Error: /search/data
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/search/views.py", line 28, in search
+    course.id = msg_decrypt(course.id)
+  File "/home/ivan/dbs-proj/comp3335/utils/encryption.py", line 34, in msg_decrypt
+    enc = base64.b64decode(enc)
+  File "/usr/lib/python3.6/base64.py", line 80, in b64decode
+    s = _bytes_from_decode_data(s)
+  File "/usr/lib/python3.6/base64.py", line 46, in _bytes_from_decode_data
+    "string, not %r" % s.__class__.__name__) from None
+TypeError: argument should be a bytes-like object or ASCII string, not 'int'

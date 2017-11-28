@@ -5,24 +5,18 @@
 {% block content %}
 	<main role="main" class="container">
 		<div>
-			<table>
+			<ul>
 			{% for C in course%}
-			<tr>
-				<td>{{C.name}}</td>
-				<td>{{C.code}}</td>
-
-			</tr>
-			{% endfor %}
-			</table>			
-			<ul>{% for M in msg %}
-				<li>
-					<ul>
-					<li>{{M.id}}</li>
-					<li>{{M.text}}</li>
-					<li>{{M.course_id}}</li>
-					<li>{{M.user_id}}</li>
-					</ul>
-				</li>
+					<li>
+					<b><h2>{{C.code}} {{C.name}}</h2></b>
+					{% for M in msg %}
+						{% if C.id == M.course_id%}
+						<ul>
+							<li><h3>{{M.text}}</h3></li>
+						</ul>
+						{% endif %}
+					{% endfor %}
+					</li>
 			{% endfor %}
 			</ul>
 		</div>
