@@ -1,6 +1,6 @@
 
-
-from django.shortcuts import render
+ 
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from comp3335.course.models import Course
 from comp3335.message.models import Message
@@ -28,7 +28,7 @@ def coursedetail(request, course_id):
     courseResult = Course.objects.all()
     msgResult = Message.objects.all()
 
-    c = []
+    c = {}
     m = []
     find = False
 
@@ -39,18 +39,19 @@ def coursedetail(request, course_id):
         if course_id in course.code:
             c={"name":course.name,"code":course.code}
             find = True
-
-    for msg in msgResult:
-        msg.text = msg_decrypt(msg.text)
-        if course.id == msg.course_id:
-            m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
+            break
 
     if find:
         logging.info("request course detail success: course code = " + course_id)
     else:
         logging.warn("request course detail failed: course code = " + str(course_id))
         return HttpResponseRedirect('/dashboard')
-    print(m)
+
+    for msg in msgResult:
+        msg.text = msg_decrypt(msg.text)
+        if course.id == msg.course_id:
+            m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
+
     return render(request, 'dashboard/board/coursedetail.html', {'course': c, 'messages':m})
 
 def getmessage(request):
@@ -60,7 +61,7 @@ def getmessage(request):
     courseResult = Course.objects.all()
 
     m = []
-    m.append(message)
+    #m.append(message)
     #get id of course where code = course_id
     # course = Course.objects.filter(code=course_id)
 
@@ -76,10 +77,14 @@ def getmessage(request):
         c.code = msg_decrypt(c.code)
         if course_code in c.code:
             course = Course.objects.get(code = enc_code)
+
     msg = Message.objects.create(text=msg_encrypt(message),user=user,course=course)
     msg.save()
     logging.info("insert message: course code = " + course_code + ", message = " + message)
 
+    msgResult = Message.objects.all()
+    for ms in msgResult:
+        m.append(msg_decrypt(ms.text))
 
     return JsonResponse(m, safe=False)
-
+    #return redirect('/dashboard/board/coursedetail.html')

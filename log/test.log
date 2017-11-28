@@ -863,3 +863,92 @@ TypeError: argument of type 'int' is not iterable
 2017-11-28 21:10:44,661:INFO:request course detail success: course code = COMP1111
 2017-11-28 21:11:07,275:INFO:request course detail success: course code = COMP1111
 2017-11-28 21:12:28,031:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:24:28,699:INFO:request course list for dashboard
+2017-11-28 21:24:30,370:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:24:35,090:INFO:insert message: course code = COMP1111, message = asjdklasjkdlsakjda
+2017-11-28 21:24:45,587:INFO:insert message: course code = COMP1111, message = sadasd
+2017-11-28 21:25:28,728:INFO:insert message: course code = COMP1111, message = adsfdsfsdf
+2017-11-28 21:27:17,833:INFO:insert message: course code = COMP1111, message = asdasd
+2017-11-28 21:27:36,756:INFO:request course list for dashboard
+2017-11-28 21:27:37,993:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:29:25,167:INFO:insert message: course code = COMP1111, message = asds
+2017-11-28 21:29:25,174:WARNING:Not Found: /dashboard/getmessage/dashboard/board/coursedetail.html
+2017-11-28 21:29:34,344:INFO:insert message: course code = COMP1111, message = asdf
+2017-11-28 21:29:34,352:WARNING:Not Found: /dashboard/board/coursedetail.html
+2017-11-28 21:29:36,355:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:30:06,509:INFO:insert message: course code = COMP1111, message = asdsd
+2017-11-28 21:30:06,873:INFO:request course list for dashboard
+2017-11-28 21:31:17,032:INFO:insert message: course code = COMP1111, message = dafsda
+2017-11-28 21:31:17,038:WARNING:Not Found: /dashboard/getmessage/dashboard/board/coursedetail.html
+2017-11-28 21:31:22,252:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:35:45,322:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:35:48,821:INFO:insert message: course code = COMP1111, message = sadjsajda;sjdalskd
+2017-11-28 21:35:48,911:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:44:30,272:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:44:34,785:INFO:insert message: course code = COMP1111, message = asdfasdfasd
+2017-11-28 21:44:45,810:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:48:12,401:INFO:insert message: course code = COMP1111, message = asdfdsa
+2017-11-28 21:48:23,225:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:49:41,573:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:49:44,684:INFO:insert message: course code = COMP1111, message = adsfdas
+2017-11-28 21:49:44,694:WARNING:Not Found: /dashboard/getmessage/dashboard/board/coursedetail.html
+2017-11-28 21:49:54,214:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:50:00,732:INFO:insert message: course code = COMP1111, message = sdasd
+2017-11-28 21:50:00,738:WARNING:Not Found: /dashboard/getmessage/dashboard/board/coursedetail.html
+2017-11-28 21:50:14,520:INFO:request course list for dashboard
+2017-11-28 21:50:16,473:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:50:21,247:INFO:insert message: course code = COMP1111, message = unnexpected
+2017-11-28 21:50:21,258:WARNING:Not Found: /dashboard/board/coursedetail.html
+2017-11-28 21:50:24,570:INFO:insert message: course code = COMP1111, message = findings
+2017-11-28 21:50:24,580:WARNING:Not Found: /dashboard/board/coursedetail.html
+2017-11-28 21:55:08,716:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:55:11,908:INFO:insert message: course code = COMP1111, message = asdsa
+2017-11-28 21:55:11,908:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view comp3335.dashboard.views.getmessage didn't return an HttpResponse object. It returned None instead.
+2017-11-28 21:56:12,378:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:56:18,981:INFO:insert message: course code = COMP1111, message = asdsasddsfa
+2017-11-28 21:56:22,298:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:56:37,884:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:56:42,638:INFO:insert message: course code = COMP1111, message = fsd
+2017-11-28 21:56:42,644:WARNING:Not Found: /dashboard/getmessage/dashboard/board/coursedetail.html
+2017-11-28 21:56:43,185:INFO:insert message: course code = COMP1111, message = 
+2017-11-28 21:56:43,190:WARNING:Not Found: /dashboard/getmessage/dashboard/board/coursedetail.html
+2017-11-28 21:56:48,955:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:56:52,159:INFO:insert message: course code = COMP1111, message = sad
+2017-11-28 21:56:52,165:WARNING:Not Found: /dashboard/board/coursedetail.html
+2017-11-28 21:57:46,764:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:58:10,761:INFO:insert message: course code = COMP1111, message = asdsaf
+2017-11-28 21:58:10,805:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:59:09,386:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:59:12,869:INFO:insert message: course code = COMP1111, message = agf
+2017-11-28 21:59:12,913:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:59:12,963:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view comp3335.dashboard.views.getmessage didn't return an HttpResponse object. It returned None instead.
+2017-11-28 22:07:33,992:INFO:request course detail success: course code = COMP1111
+2017-11-28 22:07:39,765:INFO:insert message: course code = COMP1111, message = asgfasdgasdg
+2017-11-28 22:07:56,857:INFO:request course detail success: course code = COMP1111
+2017-11-28 22:08:02,829:INFO:insert message: course code = COMP1111, message = adsfasdfsdasadfsadfasd
+2017-11-28 22:08:02,876:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 87, in getmessage
+    m.append(msg_decrypted(ms.text))
+NameError: name 'msg_decrypted' is not defined
+2017-11-28 22:08:20,258:INFO:request course detail success: course code = COMP1111
+2017-11-28 22:08:24,714:INFO:insert message: course code = COMP1111, message = sadfllkjaslkfklasfsklfjasd
+2017-11-28 22:09:41,055:INFO:insert message: course code = COMP1111, message = asd
