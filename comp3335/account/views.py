@@ -100,7 +100,7 @@ def auth(request):
         if eemail == username:
             if hash_func(pwd, acct.salt1) == acct.pwd_hash:
                 print("Success")
-                request.session["authorized"] = 1
+                request.session["authorized"] = acct.email
                 return redirect('/dashboard')
     
     
