@@ -19,6 +19,12 @@
               <input type="password" name="password">
               <input type="submit" value="Login">
             </form>
+            {% if err %}
+            <br>
+            <div class="alert alert-warning" role="alert">
+                {{ err }}
+            </div>
+            {% endif %}
         </div>
 
         

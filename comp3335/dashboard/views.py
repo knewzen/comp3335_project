@@ -17,7 +17,7 @@ def index(request):
     for c in test_courses:
         c.name = msg_decrypt(c.name)
     logging.info('request course list for dashboard')
-
+    print(request.session)
     return render(request, 'dashboard/board/index.html', {'courses': test_courses})
 
 def coursedetail(request, course_id):
@@ -56,3 +56,4 @@ def getmessage(request):
     logging.info("insert message: course code = " + course_code + ", message = " + message)
 
     return JsonResponse(messages, safe=False)
+
