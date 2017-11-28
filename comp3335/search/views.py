@@ -10,6 +10,10 @@ from comp3335.account.models import Account
 # Create your views here.
 @csrf_exempt
 def search(request):
+	try:
+		authorized = request.session['authorized']
+	except KeyError:
+		return redirect('/account/register.html')
 	course1 = request.POST["course"]
 	msg1 = request.POST["msg"]
 

@@ -15,16 +15,24 @@ logging.basicConfig(filename='log/test.log', level=logging.INFO,format='%(asctim
 
 def index(request):
     # get courses from database
+    try:
+        authorized = request.session['authorized']
+    except KeyError:
+        return redirect('/account')
+    
     test_courses= Course.objects.all()
     for c in test_courses:
         c.name = msg_decrypt(c.name)
         c.code = msg_decrypt(c.code)
     logging.info('request course list for dashboard')
-
+    print(request.session["authorized"])
     return render(request, 'dashboard/board/index.html', {'courses': test_courses})
 
 def coursedetail(request, course_id):
-
+    try:
+        authorized = request.session['authorized']
+    except KeyError:
+        return redirect('/account')
 
     courseResult = Course.objects.all()
     msgResult = Message.objects.all()
@@ -51,11 +59,19 @@ def coursedetail(request, course_id):
     for msg in msgResult:
         msg.text = msg_decrypt(msg.text)
         if course.id == msg.course_id:
-            m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
+
+            m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id,"time":msg_decrypt(msg.timestamp)})
 
     return render(request, 'dashboard/board/coursedetail.html', {'course': c, 'messages':m})
 
 def getmessage(request):
+    try:
+        authorized = request.session['authorized']
+    except KeyError:
+
+        return redirect('/account/register.html')
+
+
     course_code = request.POST['course_code']
     message = request.POST['message']
 
@@ -72,21 +88,24 @@ def getmessage(request):
         return HttpResponseRedirect("too many")
 
     #course = Course.objects.first()
-    user = Account.objects.first()
+    
+
+    user = Account.objects.get(email = authorized)
+    
     for c in courseResult:
         enc_code = c.code
         c.code = msg_decrypt(c.code)
         if course_code in c.code:
             course = Course.objects.get(code = enc_code)
-
-    msg = Message.objects.create(text=msg_encrypt(message),user=user,course=course)
+    time = msg_encrypt(strftime("%Y-%m-%d %H:%M:%S", gmtime()))
+    msg = Message.objects.create(text=msg_encrypt(message),user=user,course=course,timestamp=time)
     msg.save()
     logging.info("insert message: course code = " + course_code + ", message = " + message)
 
-    time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+    
     msgResult = Message.objects.all()
     for ms in msgResult:
-        m.append("User: "+msg_decrypt(ms.text))
+        m.append("User ["+ msg_decrypt(ms.timestamp) + "]: "+msg_decrypt(ms.text))
 
     return JsonResponse(m, safe=False)
     #return redirect('/dashboard/board/coursedetail.html')
