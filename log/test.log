@@ -406,3 +406,6 @@ TypeError: unorderable types: str() > int()
 2017-11-28 18:28:07,138:WARNING:request course detail failed: course code = COMP1111
 2017-11-28 18:28:07,523:INFO:request course list for dashboard
 >>>>>>> 2a67c4e6bad57a61d2530edd61b602437dcad8ab
+2017-11-28 18:56:43,579:INFO:request course list for dashboard
+2017-11-28 18:56:45,338:INFO:request course detail success: course code = COMP1111
+2017-11-28 18:56:47,217:INFO:insert message: course code = COMP1111, message = hi
