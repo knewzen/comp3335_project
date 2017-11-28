@@ -25,7 +25,7 @@ def index(request):
         c.name = msg_decrypt(c.name)
         c.code = msg_decrypt(c.code)
     logging.info('request course list for dashboard')
-
+    print(request.session["authorized"])
     return render(request, 'dashboard/board/index.html', {'courses': test_courses})
 
 def coursedetail(request, course_id):
@@ -59,7 +59,8 @@ def coursedetail(request, course_id):
     for msg in msgResult:
         msg.text = msg_decrypt(msg.text)
         if course.id == msg.course_id:
-            m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
+
+            m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id,"time":msg_decrypt(msg.timestamp)})
 
     return render(request, 'dashboard/board/coursedetail.html', {'course': c, 'messages':m})
 
@@ -68,6 +69,7 @@ def getmessage(request):
         authorized = request.session['authorized']
     except KeyError:
         return redirect('/account/register.html')
+
     course_code = request.POST['course_code']
     message = request.POST['message']
 
@@ -84,7 +86,10 @@ def getmessage(request):
         return HttpResponseRedirect("too many")
 
     #course = Course.objects.first()
-    user = Account.objects.first()
+    
+
+    user = Account.objects.get(email = authorized)
+    
     for c in courseResult:
         enc_code = c.code
         c.code = msg_decrypt(c.code)

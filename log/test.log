@@ -123,3 +123,22 @@ KeyError: 'authorized'
 2017-11-28 23:08:17,002:INFO:request course list for dashboard
 2017-11-28 23:08:20,834:INFO:request course list for dashboard
 2017-11-28 23:08:44,906:INFO:request course list for dashboard
+2017-11-28 23:11:54,150:INFO:request course list for dashboard
+2017-11-28 23:11:56,265:INFO:request course detail success: course code = COMP1111
+2017-11-28 23:12:15,060:INFO:request course detail success: course code = COMP1111
+2017-11-28 23:14:38,239:INFO:request course list for dashboard
+2017-11-28 23:14:40,346:INFO:request course detail success: course code = COMP1111
+2017-11-28 23:14:46,993:INFO:insert message: course code = COMP1111, message = haha
+2017-11-28 23:16:01,298:INFO:request course list for dashboard
+2017-11-28 23:16:03,653:INFO:request course detail success: course code = COMP1111
+2017-11-28 23:16:21,980:INFO:request course list for dashboard
+2017-11-28 23:16:24,193:INFO:request course detail success: course code = COMP1111
+2017-11-28 23:16:28,460:INFO:insert message: course code = COMP1111, message = ibtch
+2017-11-28 23:36:08,900:INFO:request course list for dashboard
+2017-11-28 23:38:40,352:INFO:request course list for dashboard
+2017-11-28 23:39:22,712:INFO:request course list for dashboard
+2017-11-28 23:39:37,455:INFO:request course list for dashboard
+2017-11-28 23:39:49,363:INFO:request course list for dashboard
+2017-11-28 23:41:10,619:INFO:request course list for dashboard
+2017-11-28 23:41:25,210:INFO:request course detail success: course code = COMP1111
+2017-11-28 23:41:39,082:INFO:insert message: course code = COMP1111, message = this is sent from hahaha@haha.ha

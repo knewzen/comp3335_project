@@ -78,7 +78,9 @@ def register(request):
         acct = Account(email=email, f_name = f_name, l_name = l_name, age=age, pwd_hash = pwd_hash, salt1 = salt1, salt2 = salt2)
         acct.save()
         
-        request.session["authorized"] = 1
+        request.session["authorized"] = email
+        request.session.set_expiry(300)
+        print(request.session["authorized"])
     # if a GET (or any other method) we'll create a blank form
     else:
         return render(request, 'account/register.html', {})
