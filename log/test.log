@@ -142,3 +142,4 @@ KeyError: 'authorized'
 2017-11-28 23:35:12,133:INFO:request course detail success: course code = COMP1111
 2017-11-28 23:35:14,020:WARNING:Not Found: /getmessage/
 2017-11-28 23:35:19,776:WARNING:Not Found: /getmessage/
+2017-11-28 23:43:58,172:INFO:request course list for dashboard

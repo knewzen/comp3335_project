@@ -45,11 +45,9 @@
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-            <ul class="navbar-nav mr-auto">
-                <li {% if request.path == '/dashboard/' %} class="active" {% endif %}>
-                    <a class="nav-link" href="/account/logout/">Logout <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
+            <button type="button" class="btn btn-default btn-sm">
+                <a class="nav-link" href="/account/logout/">Log out <span class="glyphicon glyphicon-log-out"></span>
+            </button>
         </div>
     </nav>
     {% endblock %}
