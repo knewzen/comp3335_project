@@ -1142,3 +1142,62 @@ django.db.utils.DataError: (1406, "Data too long for column 'code' at row 1")
 2017-11-28 16:10:26,028:WARNING:Not Found: /dashboard/lai shi shi kan
 2017-11-28 16:13:03,584:INFO:request course list for dashboard
 2017-11-28 16:13:35,518:INFO:request course list for dashboard
+2017-11-28 16:21:44,497:INFO:request course list for dashboard
+2017-11-28 16:22:25,577:WARNING:Not Found: /dashboard/lai shi shi kan
+2017-11-28 16:52:26,455:INFO:request course list for dashboard
+2017-11-28 16:52:27,154:WARNING:Not Found: /favicon.ico
+2017-11-28 16:52:31,064:WARNING:Not Found: /dashboard/lai shi shi kan
+2017-11-28 16:54:12,832:INFO:request course list for dashboard
+2017-11-28 16:54:14,172:WARNING:Not Found: /dashboard/lai shi shi kan
+2017-11-28 16:54:53,182:INFO:request course list for dashboard
+2017-11-28 16:54:58,240:WARNING:Not Found: /dashboard/lai shi shi kan
+2017-11-28 16:55:21,340:INFO:request course list for dashboard
+2017-11-28 16:55:23,967:WARNING:Not Found: /dashboard/lai shi shi kan
+2017-11-28 16:56:56,575:INFO:request course list for dashboard
+2017-11-28 16:56:58,859:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 16:56:59,255:INFO:request course list for dashboard
+2017-11-28 16:57:02,693:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 16:57:03,075:INFO:request course list for dashboard
+2017-11-28 16:57:03,794:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 16:57:04,188:INFO:request course list for dashboard
+2017-11-28 16:57:09,065:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 16:57:09,450:INFO:request course list for dashboard
+2017-11-28 17:02:04,393:ERROR:Internal Server Error: /admin/course/course/add/
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/options.py", line 551, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/sites.py", line 224, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/options.py", line 1508, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/options.py", line 1408, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/options.py", line 1448, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/xiating/dbsec/comp3335_project/comp3335/course/admin.py", line 18, in save_model
+    if len(obj.code > 100) or len(obj.name > 100):
+TypeError: unorderable types: str() > int()
+2017-11-28 17:32:33,830:INFO:request course list for dashboard
+2017-11-28 17:32:37,639:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:32:38,020:INFO:request course list for dashboard
+2017-11-28 17:32:41,996:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:32:42,360:INFO:request course list for dashboard
+2017-11-28 18:28:03,362:INFO:request course list for dashboard
+2017-11-28 18:28:07,138:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 18:28:07,523:INFO:request course list for dashboard

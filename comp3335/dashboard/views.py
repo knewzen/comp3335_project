@@ -17,16 +17,12 @@ def index(request):
     for c in test_courses:
         c.name = msg_decrypt(c.name)
         c.code = msg_decrypt(c.code)
-    for c in test_courses:
-        print(c.name)
-        print(c.code)
-        
     logging.info('request course list for dashboard')
 
     return render(request, 'dashboard/board/index.html', {'courses': test_courses})
 
 def coursedetail(request, course_id):
-    course = Course.objects.filter(code=course_id)
+    course = Course.objects.filter(code=msg_decrypt(course_id))
     if course:
         messages = Message.objects.filter(course_id=course[0].id)
         for m in messages:
