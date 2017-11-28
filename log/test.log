@@ -406,3 +406,460 @@ TypeError: unorderable types: str() > int()
 2017-11-28 18:28:07,138:WARNING:request course detail failed: course code = COMP1111
 2017-11-28 18:28:07,523:INFO:request course list for dashboard
 >>>>>>> 2a67c4e6bad57a61d2530edd61b602437dcad8ab
+2017-11-28 19:31:32,879:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 75, in getmessage
+    logging.info("insert message: course code = " + course_code + ", message = " + message)
+NameError: name 'course_code' is not defined
+2017-11-28 19:32:04,177:INFO:insert message: course code = , message = asdsad
+2017-11-28 19:32:55,811:INFO:insert message: course code = , message = asd
+2017-11-28 19:33:18,296:INFO:insert message: course code = , message = asd
+2017-11-28 19:34:14,864:INFO:insert message: course code = , message = asd
+2017-11-28 19:34:15,213:INFO:insert message: course code = , message = 
+2017-11-28 19:34:15,364:INFO:insert message: course code = , message = 
+2017-11-28 19:37:04,603:INFO:insert message: course code = , message = asd
+2017-11-28 19:37:07,835:INFO:request course detail success: course code = COMP1111
+2017-11-28 19:37:08,768:INFO:insert message: course code = , message = 
+2017-11-28 19:37:11,268:INFO:insert message: course code = , message = asd
+2017-11-28 19:38:04,403:INFO:insert message: course code = , message = asd
+2017-11-28 19:38:44,071:INFO:insert message: course code = , message = asd
+2017-11-28 19:38:51,706:INFO:request course detail success: course code = COMP1111
+2017-11-28 19:38:54,067:INFO:insert message: course code = , message = asd
+2017-11-28 19:43:09,011:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 59, in getmessage
+    print(course_id)
+NameError: name 'course_id' is not defined
+2017-11-28 19:43:33,624:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 19:43:58,453:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 19:44:27,986:INFO:request course detail success: course code = COMP1111
+2017-11-28 19:44:29,908:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 19:44:29,908:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 73, in getmessage
+    return JsonResponse(messages, safe=False)
+NameError: name 'messages' is not defined
+2017-11-28 19:45:02,128:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 19:45:40,324:INFO:request course detail success: course code = COMP1111
+2017-11-28 19:45:42,200:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 73, in getmessage
+    logging.info("insert message: course code = " + course_code + ", message = " + m)
+TypeError: must be str, not list
+2017-11-28 19:45:46,908:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 73, in getmessage
+    logging.info("insert message: course code = " + course_code + ", message = " + m)
+TypeError: must be str, not list
+2017-11-28 19:46:19,752:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 19:46:41,617:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 19:58:41,963:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 19:59:01,704:INFO:request course detail success: course code = COMP1111
+2017-11-28 19:59:05,146:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 19:59:07,491:INFO:insert message: course code = COMP1111, message = ads
+2017-11-28 19:59:10,510:INFO:insert message: course code = COMP1111, message = asdsasd
+2017-11-28 19:59:48,183:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 19:59:54,594:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 65, in getmessage
+    return render(request, 'dashboard/course_code', {"err": "Sorry... Some fields are too long."})
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/course_code
+2017-11-28 20:02:52,436:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view comp3335.dashboard.views.getmessage didn't return an HttpResponse object. It returned None instead.
+2017-11-28 20:03:41,205:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view comp3335.dashboard.views.getmessage didn't return an HttpResponse object. It returned None instead.
+2017-11-28 20:05:00,681:WARNING:Not Found: /dashboard/getmessage/too many
+2017-11-28 20:13:55,951:INFO:request course detail success: course code = COMP1111
+2017-11-28 20:13:57,759:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 79, in getmessage
+    msg = Message(text=msg_encrypt(message),user_id=msg_encrypt(1),course_id=msg_encrypt(course_code))
+  File "/home/ivan/dbs-proj/comp3335/utils/encryption.py", line 23, in msg_encrypt
+    raw = _pad(raw)
+  File "/home/ivan/dbs-proj/comp3335/utils/encryption.py", line 16, in _pad
+    return s + (bs - len(s) % bs) * chr(bs - len(s) % bs)
+TypeError: object of type 'int' has no len()
+2017-11-28 20:24:47,557:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 80, in getmessage
+    msg.save()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/base.py", line 838, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/base.py", line 924, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/base.py", line 963, in _do_insert
+    using=using, raw=raw)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1106, in execute_sql
+    for sql, params in self.as_sql():
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1059, in as_sql
+    for obj in self.query.objs
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1059, in <listcomp>
+    for obj in self.query.objs
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1058, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 998, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/fields/related.py", line 963, in get_db_prep_save
+    return self.target_field.get_db_prep_save(value, connection=connection)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 770, in get_db_prep_save
+    prepared=False)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 958, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 966, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '7hdn8rjPiUkQfx5zIwpVVW5posVuyQlj1vbZl1Utgrg='
+2017-11-28 20:31:05,560:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 79, in getmessage
+    msg = Message(text=msg_encrypt(message),user=msg_encrypt("1"),course=msg_encrypt(course_code))
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/base.py", line 555, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "'rs8MuT1W2SQEQ/bNCpRDk3IsezzpnLOSgxW/moYBo9E='": "Message.user" must be a "Account" instance.
+2017-11-28 20:32:37,222:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 79, in getmessage
+    msg = Message.objects.create(text=msg_encrypt(message),user=msg_encrypt("1"),course=msg_encrypt(course_code))
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/base.py", line 555, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "'aJAaP/7XxiBVQStsZ9vH5VKQvnTQFYxs+8kE0XCjyWM='": "Message.user" must be a "Account" instance.
+2017-11-28 20:33:08,790:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 79, in getmessage
+    msg = Message.objects.create(text=msg_encrypt(message),user="1",course=course_code)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/base.py", line 555, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "'1'": "Message.user" must be a "Account" instance.
+2017-11-28 20:34:01,973:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 79, in getmessage
+    msg = Message.objects.create(text=msg_encrypt(message),user=1,course=course_code)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/base.py", line 555, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "1": "Message.user" must be a "Account" instance.
+2017-11-28 20:36:01,087:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 78, in getmessage
+    user = Account(id=1)
+NameError: name 'Account' is not defined
+2017-11-28 20:37:01,493:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 78, in getmessage
+    user = Account.objects.first()
+NameError: name 'Account' is not defined
+2017-11-28 20:37:27,625:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 80, in getmessage
+    msg = Message.objects.create(text=msg_encrypt(message),user=user,course=course_code)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/base.py", line 555, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "'COMP1111'": "Message.course" must be a "Course" instance.
+2017-11-28 20:40:09,795:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 80, in getmessage
+    course = Course.objects.get(code = course_code)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+comp3335.course.models.DoesNotExist: Course matching query does not exist.
+2017-11-28 20:43:00,671:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 85, in getmessage
+    course = Course.objects.get(code = c.code)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+comp3335.course.models.DoesNotExist: Course matching query does not exist.
+2017-11-28 20:43:43,276:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 86, in getmessage
+    course = Course.objects.get(code = c.code)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+comp3335.course.models.DoesNotExist: Course matching query does not exist.
+2017-11-28 20:44:19,142:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 86, in getmessage
+    course = Course.objects.get(code = c.code)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+comp3335.course.models.DoesNotExist: Course matching query does not exist.
+2017-11-28 20:45:10,006:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 87, in getmessage
+    course = Course.objects.get(code = c.code)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+comp3335.course.models.DoesNotExist: Course matching query does not exist.
+2017-11-28 20:45:42,331:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 88, in getmessage
+    course = Course.objects.get(code = c.code)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+comp3335.course.models.DoesNotExist: Course matching query does not exist.
+2017-11-28 20:46:33,586:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 20:48:46,884:INFO:insert message: course code = COMP1111, message = asdsds
+2017-11-28 20:51:31,593:INFO:insert message: course code = COMP1111, message = sadsd
+2017-11-28 20:53:25,526:INFO:request course list for dashboard
+2017-11-28 20:53:28,278:ERROR:Internal Server Error: /dashboard/COMP1111/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 44, in coursedetail
+    if course_id in msg.course_id:
+TypeError: argument of type 'int' is not iterable
+2017-11-28 20:55:17,276:ERROR:Internal Server Error: /dashboard/COMP1111/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 44, in coursedetail
+    if course_id in msg.course_id:
+TypeError: argument of type 'int' is not iterable
+2017-11-28 20:57:50,512:ERROR:Internal Server Error: /dashboard/COMP1111/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 38, in coursedetail
+    if course_code in course.code:
+NameError: name 'course_code' is not defined
+2017-11-28 21:00:24,189:ERROR:Internal Server Error: /dashboard/COMP1111/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 38, in coursedetail
+    if course_code in course.code:
+NameError: name 'course_code' is not defined
+2017-11-28 21:04:09,191:ERROR:Internal Server Error: /dashboard/COMP1111/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 45, in coursedetail
+    if course_id in msg.course_id:
+TypeError: argument of type 'int' is not iterable
+2017-11-28 21:05:02,194:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:05:06,131:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 21:05:09,231:INFO:insert message: course code = COMP1111, message = fafadfa
+2017-11-28 21:07:59,668:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:09:04,488:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:10:22,214:ERROR:Internal Server Error: /dashboard/COMP1111/
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/dbs-proj/comp3335/dashboard/views.py", line 38, in coursedetail
+    if course_id in course.id:
+TypeError: argument of type 'int' is not iterable
+2017-11-28 21:10:30,406:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 21:10:30,765:INFO:request course list for dashboard
+2017-11-28 21:10:32,751:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 21:10:33,094:INFO:request course list for dashboard
+2017-11-28 21:10:44,661:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:11:07,275:INFO:request course detail success: course code = COMP1111
+2017-11-28 21:12:28,031:INFO:request course detail success: course code = COMP1111

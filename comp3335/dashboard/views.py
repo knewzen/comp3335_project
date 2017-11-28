@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from comp3335.course.models import Course
 from comp3335.message.models import Message
+from comp3335.account.models import Account
 from comp3335.utils.encryption import *
 
 import logging
@@ -31,6 +32,7 @@ def coursedetail(request, course_id):
     m = []
     find = False
 
+    #the course_id is lile "COMP1111" ! no the id of the course object
     for course in courseResult:
         course.code = msg_decrypt(course.code)
         course.name = msg_decrypt(course.name)
@@ -40,7 +42,7 @@ def coursedetail(request, course_id):
 
     for msg in msgResult:
         msg.text = msg_decrypt(msg.text)
-        if course_id in msg.course_id:
+        if course.id == msg.course_id:
             m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
 
     if find:
@@ -48,29 +50,36 @@ def coursedetail(request, course_id):
     else:
         logging.warn("request course detail failed: course code = " + str(course_id))
         return HttpResponseRedirect('/dashboard')
-    print(c)
+    print(m)
     return render(request, 'dashboard/board/coursedetail.html', {'course': c, 'messages':m})
 
 def getmessage(request):
-    course_id = request.POST['course_id']
     course_code = request.POST['course_code']
     message = request.POST['message']
 
+    courseResult = Course.objects.all()
 
+    m = []
+    m.append(message)
     #get id of course where code = course_id
     # course = Course.objects.filter(code=course_id)
 
 
-    # insert into database
-    # if message:
-    #     test_insert = Message.objects.create(text=message, course_id=course[0].id, user_id=1)
-    #     logging.info("insert message: course code = " + course_id + ", message = " +message)
-    #     test_insert.save()
+    #hvn't finished!!!!
+    if(len(msg_encrypt(message))>10000):
+        return HttpResponseRedirect("too many")
 
-    # messages = Message.objects.filter(code=course[0].id)
-
-    messages = ['a','test']
+    #course = Course.objects.first()
+    user = Account.objects.first()
+    for c in courseResult:
+        enc_code = c.code
+        c.code = msg_decrypt(c.code)
+        if course_code in c.code:
+            course = Course.objects.get(code = enc_code)
+    msg = Message.objects.create(text=msg_encrypt(message),user=user,course=course)
+    msg.save()
     logging.info("insert message: course code = " + course_code + ", message = " + message)
 
-    return JsonResponse(messages, safe=False)
+
+    return JsonResponse(m, safe=False)
 
