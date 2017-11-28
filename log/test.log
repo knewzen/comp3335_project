@@ -1126,3 +1126,4 @@ TypeError: exists() got an unexpected keyword argument 'email'
 2017-11-29 01:14:48,893:INFO:request course detail success: course code = COMP1111
 2017-11-29 01:16:43,258:INFO:request course list for dashboard
 2017-11-29 01:16:45,424:INFO:request course detail success: course code = COMP1111
+2017-11-29 01:19:09,288:INFO:request course list for dashboard
