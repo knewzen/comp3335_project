@@ -33,6 +33,8 @@ def index(request):
 def coursedetail(request, course_id):
     try:
         authorized = request.session['authorized']
+        if not Account.objects.filter(email=authorized).exists():
+            return redirect('/account')
     except KeyError:
         return redirect('/account')
 
@@ -69,8 +71,9 @@ def coursedetail(request, course_id):
 def getmessage(request):
     try:
         authorized = request.session['authorized']
+        if not Account.objects.filter(email=authorized).exists():
+            return redirect('/account')
     except KeyError:
-
         return redirect('/account')
 
 
@@ -91,7 +94,7 @@ def getmessage(request):
 
     #course = Course.objects.first()
     
-
+    find = 0
     user = Account.objects.get(email = authorized)
     
     for c in courseResult:
@@ -105,7 +108,7 @@ def getmessage(request):
     logging.info("insert message: course code = " + course_code + ", message = " + message)
 
     
-    msgResult = Message.objects.all()
+    msgResult = Message.objects.filter(course_id=course.id)
     for ms in msgResult:
         m.append("User ["+ msg_decrypt(ms.timestamp) + "]: "+msg_decrypt(ms.text))
 
