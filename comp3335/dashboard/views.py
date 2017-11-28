@@ -6,6 +6,7 @@ from comp3335.course.models import Course
 from comp3335.message.models import Message
 from comp3335.account.models import Account
 from comp3335.utils.encryption import *
+from time import gmtime, strftime
 
 import logging
 
@@ -82,9 +83,10 @@ def getmessage(request):
     msg.save()
     logging.info("insert message: course code = " + course_code + ", message = " + message)
 
+    time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
     msgResult = Message.objects.all()
-    for ms in msgResult:
-        m.append(msg_decrypt(ms.text))
+    for ms in msgResult[:-2]:
+        m.append("User ["+ time + "]: "+msg_decrypt(ms.text))
 
     return JsonResponse(m, safe=False)
     #return redirect('/dashboard/board/coursedetail.html')

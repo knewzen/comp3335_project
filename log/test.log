@@ -952,3 +952,21 @@ NameError: name 'msg_decrypted' is not defined
 2017-11-28 22:08:20,258:INFO:request course detail success: course code = COMP1111
 2017-11-28 22:08:24,714:INFO:insert message: course code = COMP1111, message = sadfllkjaslkfklasfsklfjasd
 2017-11-28 22:09:41,055:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 22:14:30,675:INFO:request course list for dashboard
+2017-11-28 22:14:32,753:INFO:request course detail success: course code = COMP1111
+2017-11-28 22:14:35,940:INFO:insert message: course code = COMP1111, message = hi
+2017-11-28 22:20:48,921:INFO:insert message: course code = COMP1111, message = asdas
+2017-11-28 22:21:26,682:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 22:21:39,931:INFO:insert message: course code = COMP1111, message = adsf
+2017-11-28 22:21:56,221:INFO:insert message: course code = COMP1111, message = asdf
+2017-11-28 22:22:23,484:INFO:insert message: course code = COMP1111, message = sadf
+2017-11-28 22:24:38,959:INFO:request course list for dashboard
+2017-11-28 22:24:40,758:INFO:request course detail success: course code = COMP1111
+2017-11-28 22:24:50,059:INFO:insert message: course code = COMP1111, message = what
+2017-11-28 22:28:10,494:INFO:insert message: course code = COMP1111, message = safsa
+2017-11-28 22:28:34,262:INFO:insert message: course code = COMP1111, message = asdssadf
+2017-11-28 22:29:00,840:INFO:insert message: course code = COMP1111, message = fsadfsad
+2017-11-28 22:29:46,003:INFO:insert message: course code = COMP1111, message = asdfasdf
+2017-11-28 22:29:57,358:INFO:insert message: course code = COMP1111, message = asd
+2017-11-28 22:29:57,902:INFO:insert message: course code = COMP1111, message = fa
+2017-11-28 22:30:29,777:INFO:insert message: course code = COMP1111, message = hhh
