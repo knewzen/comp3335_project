@@ -98,3 +98,28 @@ AttributeError: 'Message' object has no attribute 'time'
 2017-11-28 22:41:40,907:INFO:insert message: course code = COMP1111, message = it is unbelievable
 2017-11-28 22:41:45,702:INFO:insert message: course code = COMP1111, message = this is really interesting
 2017-11-28 22:42:07,044:INFO:insert message: course code = COMP1111, message = i under stand this
+2017-11-28 22:51:31,999:INFO:request course list for dashboard
+2017-11-28 22:52:18,534:INFO:request course list for dashboard
+2017-11-28 22:53:09,273:ERROR:Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiating/dbsec/comp3335_project/comp3335/dashboard/views.py", line 18, in index
+    print(request.session['authorized'])
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'authorized'
+2017-11-28 22:54:27,919:WARNING:Not Found: /dashboard/welcome/board/index.html
+2017-11-28 22:54:38,840:WARNING:Not Found: /welcome/board/index.html
+2017-11-28 22:54:45,221:WARNING:Not Found: /welcome/board/index.html
+2017-11-28 22:54:53,035:WARNING:Not Found: /welcome/index.html
+2017-11-28 23:07:47,480:INFO:request course list for dashboard
+2017-11-28 23:07:51,115:INFO:request course detail success: course code = COMP1111
+2017-11-28 23:08:11,098:INFO:insert message: course code = COMP1111, message = hi
+2017-11-28 23:08:17,002:INFO:request course list for dashboard
+2017-11-28 23:08:20,834:INFO:request course list for dashboard
+2017-11-28 23:08:44,906:INFO:request course list for dashboard

@@ -15,6 +15,11 @@ logging.basicConfig(filename='log/test.log', level=logging.INFO,format='%(asctim
 
 def index(request):
     # get courses from database
+    try:
+        authorized = request.session['authorized']
+    except KeyError:
+        return redirect('/account/register.html')
+    
     test_courses= Course.objects.all()
     for c in test_courses:
         c.name = msg_decrypt(c.name)
@@ -24,7 +29,10 @@ def index(request):
     return render(request, 'dashboard/board/index.html', {'courses': test_courses})
 
 def coursedetail(request, course_id):
-
+    try:
+        authorized = request.session['authorized']
+    except KeyError:
+        return redirect('/account/register.html')
 
     courseResult = Course.objects.all()
     msgResult = Message.objects.all()
@@ -56,6 +64,10 @@ def coursedetail(request, course_id):
     return render(request, 'dashboard/board/coursedetail.html', {'course': c, 'messages':m})
 
 def getmessage(request):
+    try:
+        authorized = request.session['authorized']
+    except KeyError:
+        return redirect('/account/register.html')
     course_code = request.POST['course_code']
     message = request.POST['message']
 

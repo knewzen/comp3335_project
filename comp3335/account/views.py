@@ -78,7 +78,7 @@ def register(request):
         acct = Account(email=email, f_name = f_name, l_name = l_name, age=age, pwd_hash = pwd_hash, salt1 = salt1, salt2 = salt2)
         acct.save()
         
-        
+        request.session["authorized"] = 1
     # if a GET (or any other method) we'll create a blank form
     else:
         return render(request, 'account/register.html', {})
@@ -98,10 +98,12 @@ def auth(request):
         if eemail == username:
             if hash_func(pwd, acct.salt1) == acct.pwd_hash:
                 print("Success")
+                request.session["authorized"] = 1
                 return redirect('/dashboard')
     
     
     print("fail")
+
     return render(request, 'account/index.html', {"err": "Sorry... wrong email or password provided."}) 
     
         
