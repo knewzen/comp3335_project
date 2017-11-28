@@ -1,0 +1,176 @@
+2017-11-28 16:20:54,879:WARNING:Not Found: /admin/a
+2017-11-28 16:54:53,721:INFO:request course list for dashboard
+2017-11-28 16:54:55,891:WARNING:Not Found: /dashboard/lai shi shi kan
+2017-11-28 16:57:56,331:INFO:request course list for dashboard
+2017-11-28 16:57:58,453:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 16:57:58,891:INFO:request course list for dashboard
+2017-11-28 16:58:01,470:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 16:58:01,830:INFO:request course list for dashboard
+2017-11-28 16:58:08,349:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 16:58:08,705:INFO:request course list for dashboard
+2017-11-28 17:00:10,951:INFO:request course list for dashboard
+2017-11-28 17:00:12,870:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:00:13,222:INFO:request course list for dashboard
+2017-11-28 17:02:45,568:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:02:45,988:INFO:request course list for dashboard
+2017-11-28 17:02:51,724:WARNING:Not Found: /dashboard/coursedetails.html
+2017-11-28 17:03:39,126:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:03:39,478:INFO:request course list for dashboard
+2017-11-28 17:03:40,075:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:03:40,433:INFO:request course list for dashboard
+2017-11-28 17:03:42,761:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:03:42,927:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:03:43,071:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:03:43,211:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:03:43,437:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:03:43,805:INFO:request course list for dashboard
+2017-11-28 17:05:08,205:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:05:08,573:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:05:08,925:INFO:request course list for dashboard
+2017-11-28 17:05:26,308:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:05:26,661:INFO:request course list for dashboard
+2017-11-28 17:09:19,789:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:09:20,143:INFO:request course list for dashboard
+2017-11-28 17:10:05,424:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:10:05,786:INFO:request course list for dashboard
+2017-11-28 17:10:08,270:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:10:08,622:INFO:request course list for dashboard
+2017-11-28 17:15:25,574:INFO:request course list for dashboard
+2017-11-28 17:15:27,581:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:15:27,917:INFO:request course list for dashboard
+2017-11-28 17:15:29,769:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:15:30,123:INFO:request course list for dashboard
+2017-11-28 17:15:40,015:INFO:request course list for dashboard
+2017-11-28 17:15:41,490:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:15:41,855:INFO:request course list for dashboard
+2017-11-28 17:17:31,300:INFO:request course list for dashboard
+2017-11-28 17:17:44,383:INFO:request course list for dashboard
+2017-11-28 17:17:46,460:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:17:46,808:INFO:request course list for dashboard
+2017-11-28 17:28:12,265:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:28:12,625:INFO:request course list for dashboard
+2017-11-28 17:28:14,691:INFO:request course list for dashboard
+2017-11-28 17:28:16,760:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:28:17,094:INFO:request course list for dashboard
+2017-11-28 17:42:58,157:ERROR:Internal Server Error: /account/auth
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 274, in get_new_connection
+    conn = Database.connect(**conn_params)
+  File "/home/ivan/.local/lib/python3.6/site-packages/MySQLdb/__init__.py", line 86, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/MySQLdb/connections.py", line 204, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+_mysql_exceptions.OperationalError: (2003, "Can't connect to MySQL server on '128.199.130.241' (111)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/account/views.py", line 96, in auth
+    for acct in accts:
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 250, in __iter__
+    self._fetch_all()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 882, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 254, in cursor
+    return self._cursor()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 274, in get_new_connection
+    conn = Database.connect(**conn_params)
+  File "/home/ivan/.local/lib/python3.6/site-packages/MySQLdb/__init__.py", line 86, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/MySQLdb/connections.py", line 204, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on '128.199.130.241' (111)")
+2017-11-28 17:43:11,861:ERROR:Internal Server Error: /account/auth
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 274, in get_new_connection
+    conn = Database.connect(**conn_params)
+  File "/home/ivan/.local/lib/python3.6/site-packages/MySQLdb/__init__.py", line 86, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/MySQLdb/connections.py", line 204, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+_mysql_exceptions.OperationalError: (2003, "Can't connect to MySQL server on '128.199.130.241' (111)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/account/views.py", line 96, in auth
+    for acct in accts:
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 250, in __iter__
+    self._fetch_all()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 882, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 254, in cursor
+    return self._cursor()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 274, in get_new_connection
+    conn = Database.connect(**conn_params)
+  File "/home/ivan/.local/lib/python3.6/site-packages/MySQLdb/__init__.py", line 86, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/MySQLdb/connections.py", line 204, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on '128.199.130.241' (111)")
+2017-11-28 17:44:51,613:INFO:request course list for dashboard
+2017-11-28 17:44:53,672:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 17:44:54,024:INFO:request course list for dashboard
+2017-11-28 18:21:11,975:INFO:request course list for dashboard
+2017-11-28 18:21:13,913:WARNING:request course detail failed: course code = COMP1111
+2017-11-28 18:21:14,272:INFO:request course list for dashboard
+2017-11-28 18:22:03,603:INFO:request course detail success: course code = COMP1111
+2017-11-28 18:23:13,563:INFO:request course detail success: course code = COMP1111
+2017-11-28 18:28:41,625:INFO:request course detail success: course code = COMP1111
+2017-11-28 18:30:14,811:INFO:request course detail success: course code = COMP1111

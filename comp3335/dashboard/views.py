@@ -26,18 +26,34 @@ def index(request):
     return render(request, 'dashboard/board/index.html', {'courses': test_courses})
 
 def coursedetail(request, course_id):
-    course = Course.objects.filter(code=course_id)
-    if course:
-        messages = Message.objects.filter(course_id=course[0].id)
-        for m in messages:
-            m.text = msg_decrypt(m.text)
-        course[0].name = msg_decrypt(course[0].name)
+
+
+    courseResult = Course.objects.all()
+    msgResult = Message.objects.all()
+
+    c = []
+    m = []
+    find = False
+
+    for course in courseResult:
+        course.code = msg_decrypt(course.code)
+        course.name = msg_decrypt(course.name)
+        if course_id in course.code:
+            c={"name":course.name,"code":course.code}
+            find = True
+
+    for msg in msgResult:
+        msg.text = msg_decrypt(msg.text)
+        if course_id in msg.course_id:
+            m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
+
+    if find:
         logging.info("request course detail success: course code = " + course_id)
     else:
         logging.warn("request course detail failed: course code = " + str(course_id))
         return HttpResponseRedirect('/dashboard')
-
-    return render(request, 'dashboard/board/coursedetail.html', {'course': course[0], 'messages':messages})
+    print(c)
+    return render(request, 'dashboard/board/coursedetail.html', {'course': c, 'messages':m})
 
 def getmessage(request):
     course_id = request.POST['course_id']
