@@ -69,7 +69,7 @@ def getmessage(request):
         authorized = request.session['authorized']
     except KeyError:
 
-        return redirect('/account/register.html')
+        return redirect('/account')
 
 
     course_code = request.POST['course_code']

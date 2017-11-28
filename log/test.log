@@ -1,0 +1,10 @@
+2017-11-29 00:00:47,412:INFO:request course list for dashboard
+2017-11-29 00:00:50,278:INFO:request course detail success: course code = COMP1111
+2017-11-29 00:00:59,536:INFO:request course list for dashboard
+2017-11-29 00:01:04,975:INFO:request course detail success: course code = COMP1111
+2017-11-29 00:01:09,574:INFO:insert message: course code = COMP1111, message = and again
+2017-11-29 00:01:25,545:INFO:request course list for dashboard
+2017-11-29 00:01:29,136:INFO:request course detail success: course code = COMP1111
+2017-11-29 00:01:33,556:INFO:insert message: course code = COMP1111, message = we are strong
+2017-11-29 00:31:35,269:WARNING:Not Found: /adminb
+2017-11-29 00:31:44,851:INFO:request course list for dashboard

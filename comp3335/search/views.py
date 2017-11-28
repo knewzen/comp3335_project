@@ -13,7 +13,7 @@ def search(request):
 	try:
 		authorized = request.session['authorized']
 	except KeyError:
-		return redirect('/account/register.html')
+		return redirect('/account')
 	course1 = request.POST["course"]
 	msg1 = request.POST["msg"]
 
@@ -26,7 +26,7 @@ def search(request):
 	for course in courseResult:
 		course.name = msg_decrypt(course.name)
 		if course1 in course.name or course1 in course.code:
-			c.append({"name": course.name, "code":course.code})
+			c.append({"name": (course.name), "code":msg_decrypt(course.code), "id":course.id})
 
 	for msg in msgResult:
 		msg.text = msg_decrypt(msg.text)
