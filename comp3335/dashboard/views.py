@@ -17,6 +17,8 @@ def index(request):
     # get courses from database
     try:
         authorized = request.session['authorized']
+        if not Account.objects.filter(email=authorized).exists():
+            return redirect('/account')
     except KeyError:
         return redirect('/account')
     

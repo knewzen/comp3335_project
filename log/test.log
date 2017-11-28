@@ -1095,3 +1095,34 @@ TypeError: argument should be a bytes-like object or ASCII string, not 'int'
 2017-11-29 00:42:33,430:INFO:request course list for dashboard
 2017-11-29 00:42:46,581:INFO:request course list for dashboard
 >>>>>>> 2063b0f418ac0ba29078d79c67faf4a725cca1b9
+2017-11-29 01:05:48,162:INFO:request course list for dashboard
+2017-11-29 01:07:01,791:INFO:request course list for dashboard
+2017-11-29 01:07:04,025:INFO:request course list for dashboard
+2017-11-29 01:13:16,110:ERROR:Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiating/dbsec/comp3335_project/comp3335/dashboard/views.py", line 20, in index
+    if not Account.objects.exists(email=authorized):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+TypeError: exists() got an unexpected keyword argument 'email'
+2017-11-29 01:14:11,323:ERROR:Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiating/dbsec/comp3335_project/comp3335/dashboard/views.py", line 20, in index
+    if not Account.objects.all().exists(email=authorized):
+TypeError: exists() got an unexpected keyword argument 'email'
+2017-11-29 01:14:46,777:INFO:request course list for dashboard
+2017-11-29 01:14:48,893:INFO:request course detail success: course code = COMP1111
+2017-11-29 01:16:43,258:INFO:request course list for dashboard
+2017-11-29 01:16:45,424:INFO:request course detail success: course code = COMP1111

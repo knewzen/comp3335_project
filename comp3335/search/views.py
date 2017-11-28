@@ -12,8 +12,12 @@ from comp3335.account.models import Account
 def search(request):
 	try:
 		authorized = request.session['authorized']
+		if not Account.objects.filter(email=authorized).exists():
+			return redirect('/account')
 	except KeyError:
-		return redirect('/account/register.html')
+		return redirect('/account')
+
+
 	course1 = request.POST["search"]
 
 	courseResult = Course.objects.all()
@@ -32,6 +36,7 @@ def search(request):
 		msg.text = msg_decrypt(msg.text)
 		if course1.lower() in msg.text.lower():
 			m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
+
 
 	context = {"course":c,"msg":m}
 	#print(context)
