@@ -2,7 +2,16 @@
 
 {% block title %} Welcome {% endblock %}
 
-{% block content %}
+
+
+{% block javascript %}
+<script>
+    $(document).ready(function(){
+    $('#mycarousel').carousel({
+        interval: 2000
+    });
+});
+</script>
 
 
 {% endblock %}
