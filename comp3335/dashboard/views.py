@@ -16,8 +16,8 @@ def index(request):
     test_courses= Course.objects.all()
     for c in test_courses:
         c.name = msg_decrypt(c.name)
+        c.code = msg_decrypt(c.code)
     logging.info('request course list for dashboard')
-
     return render(request, 'dashboard/board/index.html', {'courses': test_courses})
 
 def coursedetail(request, course_id):
@@ -56,3 +56,4 @@ def getmessage(request):
     logging.info("insert message: course code = " + course_code + ", message = " + message)
 
     return JsonResponse(messages, safe=False)
+

@@ -6,9 +6,12 @@
     <link href="{% static "welcome/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "welcome/custom.css" %}" rel="stylesheet">
     <style>
-        img {
+        .slide-imgs {
             opacity: 0.5;
             filter: alpha(opacity=50); /* For IE8 and earlier */
+        }
+        li {
+            list-style-type: none;
         }
     </style>
 </head>
@@ -23,11 +26,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
+                <li {% if request.path == '/' %} class="active" {% endif %} >
+
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
 
-                <li class="nav-item active">
+                <li {% if request.path == '/dashboard' %} class="active" {% endif %}>
                     <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
@@ -40,7 +44,6 @@
         </div>
     </nav>
 </header>
-
 <main role="main">
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -53,19 +56,19 @@
 
 
             <div class="carousel-item active">
-                <img class="first-slide"
+                <img class="first-slide slide-imgs"
                      src="https://theundercoverrecruiter.com/wp-content/uploads/2013/08/writing-resume.jpg"
                      alt="First slide">
                 <div class="container">
                     <div class="carousel-caption text-left">
-                        <h1>Welcome To COMP Forum</h1>
+                        <h1>Welcome To COMP Forum </h1>
                         <br>
                         <p><a class="btn btn-primary" role="button"  href="/account/register.html" >Register Now</a></p>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="second-slide"
+                <img class="second-slide slide-imgs"
                      src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAlUAAAAJGYzNmYzMjE4LWY2YWUtNDZjMC05ZmE0LTU5NGYyYTM4MWI0ZQ.jpg"
                      alt="Second slide">
                 <div class="container">
@@ -79,7 +82,7 @@
             </div>
 
             <div class="carousel-item">
-                <img class="second-slide"
+                <img class="second-slide slide-imgs"
                      src="http://www.ceotoceo.biz/site/wp-content/uploads/Pub_CT_392_How_to_Create_Rich_Discussion_via_Blog_Posts.jpg"
                      alt="Second slide">
                 <div class="container">
@@ -108,47 +111,17 @@
 
     <div class="container marketing">
 
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-            <div class="col-lg-4">
-                <img class="rounded-circle"
-                     src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                     alt="Generic placeholder image" width="140" height="140">
-                <h2>Edward</h2>
-                <p>We are very confidence about our project</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="rounded-circle"
-                     src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                     alt="Generic placeholder image" width="140" height="140">
-                <h2>Oliver</h2>
-                <p>People will get benefits from us</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="rounded-circle"
-                     src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                     alt="Generic placeholder image" width="140" height="140">
-                <h2>Ivan</h2>
-                <p>Please give me A+</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider">
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">Feature A</span></h2>
-                <p class="lead">Aya Aya Aya</p>
+                <h2 class="featurette-heading">Message Encryption</span></h2>
+                <p class="lead">Every messages will be sent in very secure ways.
+                    Users can communicate with each other and express themselves freely without fear of unintended people
+                    gaining access to their private stuff!</p>
             </div>
             <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto"
-                     alt="Generic placeholder image">
+                <img class="featurette-image img-fluid mx-auto" src="http://cdn.makeuseof.com/wp-content/uploads/2012/09/forumpeople.jpg"
+                     alt="Communication platform">
             </div>
         </div>
 
@@ -156,11 +129,12 @@
 
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Feature B</span></h2>
-                <p class="lead">Yes Yes Yes</p>
+                <h2 class="featurette-heading">High Authentication</span></h2>
+                <p class="lead">Users' password is hashed so that it removes the password completely,
+                    leaving nothing available to be compromised! </p>
             </div>
             <div class="col-md-5 order-md-1">
-                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto"
+                <img class="featurette-image img-fluid mx-auto" src="https://singularityknows.com/wp-content/uploads/2015/02/tech-security-resized.jpg"
                      alt="Generic placeholder image">
             </div>
         </div>
@@ -169,12 +143,23 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">Feature C</p>
+                <h2 class="featurette-heading">HTTPS</p>
+                    <p class="lead">Secure version of HTTP and all the communication between users' browser and our server
+                    are encrypted!</p>
             </div>
             <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto"
+                <img class="featurette-image img-fluid mx-auto" src="https://www.networking4all.com/nw4all/assets/img/home-ssl-encryption.png"
                      alt="Generic placeholder image">
             </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <div class="container">
+            <h2 class="text-center">Register Now!</h2>
+            <div class="panel panel-default">
+                <div class="panel-body text-center">Please click <a href="/account/register">here</a> to register</div>
+            </div>
+        </div>
         </div>
 
         <hr class="featurette-divider">
@@ -182,6 +167,8 @@
         <!-- /END THE FEATURETTES -->
 
     </div><!-- /.container -->
+
+
 
 
     <!-- FOOTER -->
@@ -195,7 +182,6 @@
 
 
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-<script src="https://unpkg.com/popper.js"></script>
 <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 <script src="https://getbootstrap.com/assets/js/vendor/holder.min.js"></script>
 {% block javascript %}{% endblock %}
