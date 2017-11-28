@@ -17,7 +17,7 @@ class Account(models.Model):
     history = audit.AuditTrail()
 
     def __str__(self):
-        return msg_decrypt(self.email) + " owns " + "password hash: " + self.pwd_hash + ", firstname encrypted: " + self.f_name + ", lastname encrypted: " + self.l_name
+        return msg_decrypt(self.email)
 
 #@receiver(post_save, sender=User)
 #def create_user_profile(sender, instance, created, **kwargs):

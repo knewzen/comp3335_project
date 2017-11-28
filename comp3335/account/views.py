@@ -98,8 +98,6 @@ def auth(request):
         if eemail == username:
             if hash_func(pwd, acct.salt1) == acct.pwd_hash:
                 print("Success")
-                p_hist = acct.history.all()
-                print(p_hist)
                 return redirect('/dashboard')
     
     

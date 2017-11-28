@@ -901,3 +901,150 @@ NameError: name 'msg_decrypt' is not defined
 2017-11-28 14:43:41,349:INFO:request course list for dashboard
 2017-11-28 14:47:03,722:INFO:request course list for dashboard
 2017-11-28 14:48:02,517:INFO:request course list for dashboard
+2017-11-28 14:54:33,326:INFO:request course list for dashboard
+2017-11-28 14:54:33,375:INFO:request course list for dashboard
+2017-11-28 14:55:27,009:INFO:request course list for dashboard
+2017-11-28 15:01:07,491:INFO:request course list for dashboard
+2017-11-28 15:01:07,692:INFO:request course list for dashboard
+2017-11-28 15:01:14,927:ERROR:Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 274, in get_new_connection
+    conn = Database.connect(**conn_params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/__init__.py", line 86, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 204, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+_mysql_exceptions.OperationalError: (2003, "Can't connect to MySQL server on '128.199.130.241' (110)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiating/dbsec/comp3335_project/comp3335/dashboard/views.py", line 17, in index
+    for c in test_courses:
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/query.py", line 250, in __iter__
+    self._fetch_all()
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 882, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 254, in cursor
+    return self._cursor()
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 274, in get_new_connection
+    conn = Database.connect(**conn_params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/__init__.py", line 86, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 204, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on '128.199.130.241' (110)")
+2017-11-28 15:01:22,108:INFO:request course list for dashboard
+2017-11-28 15:01:24,104:INFO:request course list for dashboard
+2017-11-28 15:01:26,167:INFO:request course list for dashboard
+2017-11-28 15:02:43,420:INFO:request course list for dashboard
+2017-11-28 15:02:48,678:INFO:request course list for dashboard
+2017-11-28 15:22:44,414:ERROR:Internal Server Error: /admin/course/course/
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/options.py", line 617, in get_field
+    return self.fields_map[field_name]
+KeyError: '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/utils.py", line 283, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/utils.py", line 317, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/options.py", line 619, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Course has no field named '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/response.py", line 84, in rendered_content
+    content = template.render(context, self._request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/template/library.py", line 225, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/templatetags/admin_list.py", line 340, in result_list
+    'results': list(results(cl))}
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/templatetags/admin_list.py", line 316, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/templatetags/admin_list.py", line 307, in __init__
+    super(ResultList, self).__init__(*items)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/templatetags/admin_list.py", line 218, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/contrib/admin/utils.py", line 299, in lookup_field
+    value = attr()
+  File "/home/xiating/dbsec/comp3335_project/comp3335/course/models.py", line 10, in __str__
+    return msg_decrypt(self.code) + " "+ msg_decrypt(self.name)
+NameError: name 'msg_decrypt' is not defined
