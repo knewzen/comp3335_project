@@ -106,4 +106,7 @@ def auth(request):
 
     return render(request, 'account/index.html', {"err": "Sorry... wrong email or password provided."}) 
     
-        
+def logout(request):
+    request.session.flush()
+
+    return redirect('/account/')
