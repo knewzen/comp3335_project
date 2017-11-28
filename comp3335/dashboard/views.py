@@ -18,7 +18,7 @@ def index(request):
     try:
         authorized = request.session['authorized']
     except KeyError:
-        return redirect('/account/register.html')
+        return redirect('/account')
     
     test_courses= Course.objects.all()
     for c in test_courses:
@@ -32,7 +32,7 @@ def coursedetail(request, course_id):
     try:
         authorized = request.session['authorized']
     except KeyError:
-        return redirect('/account/register.html')
+        return redirect('/account')
 
     courseResult = Course.objects.all()
     msgResult = Message.objects.all()
@@ -68,7 +68,9 @@ def getmessage(request):
     try:
         authorized = request.session['authorized']
     except KeyError:
+
         return redirect('/account/register.html')
+
 
     course_code = request.POST['course_code']
     message = request.POST['message']
