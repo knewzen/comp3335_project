@@ -9,12 +9,12 @@
 			{% for C in course%}
 					<li>
 					<b><h2>{{C.code}} {{C.name}}</h2></b>
-					{% for M in msg %}
-						{% if C.id == M.course_id%}
+					{% for M in allMsg %}
 						<ul>
+						{% if C.id == M.course_id %}
 							<li><h3>{{M.text}}</h3></li>
-						</ul>
 						{% endif %}
+						</ul>
 					{% endfor %}
 					</li>
 			{% endfor %}

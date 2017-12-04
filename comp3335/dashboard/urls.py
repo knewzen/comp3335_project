@@ -11,4 +11,6 @@ urlpatterns = [
     # ajax: get message
     url(r'^getmessage/$', views.getmessage, name='getmessage'),
 
+    
+
 ]

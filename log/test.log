@@ -1133,3 +1133,103 @@ TypeError: exists() got an unexpected keyword argument 'email'
 2017-11-29 01:45:47,727:INFO:request course list for dashboard
 2017-11-29 01:45:49,995:INFO:request course detail success: course code = COMP3334
 2017-11-29 01:45:55,281:INFO:insert message: course code = COMP3334, message = hello there
+2017-12-04 21:29:06,171:WARNING:Not Found: /favicon.ico
+2017-12-04 21:47:35,499:INFO:request course list for dashboard
+2017-12-04 21:47:38,232:INFO:request course detail success: course code = COMP3334
+2017-12-04 21:47:38,397:INFO:request course detail success: course code = COMP3334
+2017-12-04 22:28:57,600:ERROR:Internal Server Error: /search/data
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/search/views.py", line 45, in search
+    if temp.id not in c.id:
+AttributeError: 'dict' object has no attribute 'id'
+2017-12-04 22:31:43,993:ERROR:Internal Server Error: /search/data
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/search/views.py", line 47, in search
+    if temp.id == t.course_id:
+AttributeError: 'dict' object has no attribute 'id'
+2017-12-04 22:32:17,275:ERROR:Internal Server Error: /search/data
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/search/views.py", line 47, in search
+    if temp.id == t.course_id:
+AttributeError: 'int' object has no attribute 'id'
+2017-12-04 22:32:25,966:ERROR:Internal Server Error: /search/data
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/search/views.py", line 47, in search
+    if temp == t.course_id:
+AttributeError: 'dict' object has no attribute 'course_id'
+2017-12-04 22:32:55,304:ERROR:Internal Server Error: /search/data
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/search/views.py", line 47, in search
+    if temp == t.id:
+AttributeError: 'dict' object has no attribute 'id'
+2017-12-04 22:34:17,813:INFO:request course detail success: course code = COMP3334
+2017-12-04 22:34:20,551:ERROR:Internal Server Error: /search/data
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/search/views.py", line 47, in search
+    print(t.id)
+AttributeError: 'dict' object has no attribute 'id'
+2017-12-04 22:36:15,150:INFO:request course detail success: course code = COMP3334
+2017-12-04 22:40:26,893:ERROR:Internal Server Error: /search/data
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/search/views.py", line 49, in search
+    c.append({"name": tempName, "code":tempCode, "id":course.id})
+NameError: name 'tempName' is not defined
+2017-12-04 22:52:05,039:INFO:request course list for dashboard
+2017-12-04 22:52:09,290:INFO:request course detail success: course code = COMP1011
+2017-12-04 22:52:19,385:INFO:insert message: course code = COMP1011, message = algorithm is fun

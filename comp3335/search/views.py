@@ -24,7 +24,8 @@ def search(request):
 	msgResult = Message.objects.all()
 
 	c = []
-	m = []
+	#m = []
+	all_m = []
 
 	for course in courseResult:
 		course.name = msg_decrypt(course.name)
@@ -35,9 +36,19 @@ def search(request):
 	for msg in msgResult:
 		msg.text = msg_decrypt(msg.text)
 		if course1.lower() in msg.text.lower():
-			m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
+			#m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
+			for course in courseResult:
+				if msg.course_id == course.id:
+					exist = False;
+					for t in c:
+						if course.id == t['id']:
+							exist = True
+					if not exist:
+						c.append({"name": course.name, "code":course.code, "id":course.id})
+		all_m.append({"id" : msg.id, "text":msg.text, "user_id":msg.user_id, "course_id":msg.course_id})
 
-
-	context = {"course":c,"msg":m}
+	#print(all_m)
+	#print(c)
+	context = {"course":c,"allMsg":all_m}
 	#print(context)
 	return render(request,'search/SearchResult.html',context)
