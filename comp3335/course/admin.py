@@ -21,4 +21,4 @@ class CourseAdmin(admin.ModelAdmin):
         	return
         obj.save()
 
-admin.site.register(Course, SimpleHistoryAdmin)
+admin.site.register(Course, CourseAdmin)

@@ -21,6 +21,6 @@ class AccountAdmin(admin.ModelAdmin):
         	return
         obj.save()
 
-admin.site.register(Account, SimpleHistoryAdmin)
+admin.site.register(Account, AccountAdmin)
 
 # Register your models here.

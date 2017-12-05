@@ -15,5 +15,5 @@ class MessageAdmin(admin.ModelAdmin):
         	return
         obj.save()
 
-admin.site.register(Message, SimpleHistoryAdmin)
+admin.site.register(Message, MessageAdmin)
 # Register your models here.
