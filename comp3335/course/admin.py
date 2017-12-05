@@ -2,6 +2,7 @@ from django.contrib import admin
 import re
 from .models import Course
 from comp3335.utils.encryption import *
+from simple_history.admin import SimpleHistoryAdmin
 # Create your models here.
 
 
@@ -20,4 +21,4 @@ class CourseAdmin(admin.ModelAdmin):
         	return
         obj.save()
 
-admin.site.register(Course, CourseAdmin)
+admin.site.register(Course, SimpleHistoryAdmin)

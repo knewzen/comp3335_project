@@ -2,7 +2,7 @@ from django.db import models
 import audit
 from django.contrib.auth.models import User
 from comp3335.utils.encryption import *
-
+from simple_history.models import HistoricalRecords
 # Create your models here.
 class Account(models.Model):
     email = models.CharField(unique=True,max_length=255,null=False) #noEncrypt
@@ -12,9 +12,7 @@ class Account(models.Model):
     f_name = models.CharField(max_length=90, null=False)
     l_name = models.CharField(max_length=90, null=False)
     age = models.CharField(max_length=64,null=False)
-
-
-    history = audit.AuditTrail()
+    
 
     def __str__(self):
         return msg_decrypt(self.email)

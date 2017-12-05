@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Message
 
 from comp3335.utils.encryption import *
+from simple_history.admin import SimpleHistoryAdmin
 # Create your models here.
 
 
@@ -14,5 +15,5 @@ class MessageAdmin(admin.ModelAdmin):
         	return
         obj.save()
 
-admin.site.register(Message, MessageAdmin)
+admin.site.register(Message, SimpleHistoryAdmin)
 # Register your models here.

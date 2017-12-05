@@ -1233,3 +1233,70 @@ NameError: name 'tempName' is not defined
 2017-12-04 22:52:05,039:INFO:request course list for dashboard
 2017-12-04 22:52:09,290:INFO:request course detail success: course code = COMP1011
 2017-12-04 22:52:19,385:INFO:insert message: course code = COMP1011, message = algorithm is fun
+2017-12-04 23:02:54,337:ERROR:Internal Server Error: /search/data
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/base.py", line 507, in parse
+    compile_func = self.tags[command]
+KeyError: 'highlight'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ivan/dbs-proj/comp3335/search/views.py", line 54, in search
+    return render(request,'search/SearchResult.html',context)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/base.py", line 515, in parse
+    raise self.error(token, e)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/base.py", line 513, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/loader_tags.py", line 312, in do_extends
+    nodelist = parser.parse()
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/base.py", line 515, in parse
+    raise self.error(token, e)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/base.py", line 513, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/loader_tags.py", line 255, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/base.py", line 509, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/ivan/.local/lib/python3.6/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 9: 'highlight', expected 'endblock'. Did you forget to register or load this tag?
+2017-12-04 23:11:37,641:INFO:request course list for dashboard
+2017-12-04 23:11:39,718:INFO:request course detail success: course code = COMP3334
+2017-12-04 23:11:43,388:INFO:insert message: course code = COMP3334, message = hi
+2017-12-04 23:11:54,633:INFO:insert message: course code = COMP3334, message = this is a thing to test our auditing
+2017-12-04 23:11:59,385:INFO:insert message: course code = COMP3334, message = and i hope it really work
+2017-12-04 23:12:01,372:INFO:insert message: course code = COMP3334, message = somehiw
+2017-12-04 23:45:18,963:INFO:request course list for dashboard
+2017-12-05 00:34:12,589:INFO:request course list for dashboard
+2017-12-05 00:38:01,128:INFO:request course detail success: course code = COMP2011
+2017-12-05 00:38:03,931:INFO:request course list for dashboard
+2017-12-05 00:38:06,157:INFO:request course detail success: course code = COMP3011
+2017-12-05 00:39:58,364:INFO:insert message: course code = COMP3011, message = I am testing.
+2017-12-05 16:09:52,985:WARNING:Not Found: /favicon.ico

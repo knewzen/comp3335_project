@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Account
 
 from comp3335.utils.encryption import *
+from simple_history.admin import SimpleHistoryAdmin
 # Create your models here.
 
 
@@ -20,6 +21,6 @@ class AccountAdmin(admin.ModelAdmin):
         	return
         obj.save()
 
-admin.site.register(Account, AccountAdmin)
+admin.site.register(Account, SimpleHistoryAdmin)
 
 # Register your models here.
