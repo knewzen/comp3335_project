@@ -114,3 +114,8 @@ def getmessage(request):
 
     return JsonResponse(m, safe=False)
     #return redirect('/dashboard/board/coursedetail.html')
+
+
+
+def update(request):
+    pass

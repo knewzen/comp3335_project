@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'comp3335.course',
     'comp3335.message',
     'comp3335.search',
+    'comp3335.update',
     'simple_history',
+    'easyaudit',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'simple_history.middleware.HistoryRequestMiddleware',
+    'easyaudit.middleware.easyaudit.EasyAuditMiddleware',
 ]
 
 

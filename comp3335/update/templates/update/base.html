@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link href="{% static "dashboard/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "search/bootstrap.min.css" %}" rel="stylesheet">
 
     <style>
         .footer {
@@ -20,18 +20,18 @@
 <div id="content">
     {% block navigation %}
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <a class="navbar-brand" href="/">E-Learning</a>
+        <a class="navbar-brand" href="#">E-Learning</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li {% if request.path == '/' %} class="active" {% endif %} >
+                <li class="nav-item ">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
 
-                <li {% if request.path == '/dashboard/' %} class="active" {% endif %}>
+                <li class="nav-item active">
                     <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
                 </li>
                 <!--<li class="nav-item">-->
@@ -43,9 +43,6 @@
             </ul>
             <li>
                 <a class="btn btn-info" role="button"  href="/search/" >Search</a>
-                ""
-                <a class="btn btn-info" role="button"  href="/update/" >Update</a>
-                ""
                 <a class="btn btn-info" role="button"  href="/account/logout/" >Log out</a>
             </li>
         </div>

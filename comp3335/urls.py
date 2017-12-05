@@ -18,6 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^search/', include('comp3335.search.urls')),
+    url(r'^update/', include('comp3335.update.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^dashboard/', include('comp3335.dashboard.urls')),
 
