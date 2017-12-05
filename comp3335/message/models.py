@@ -8,4 +8,4 @@ class Message(models.Model):
     timestamp = models.CharField(max_length=120, null=False)
     user = models.ForeignKey(Account, null=True, on_delete=models.SET_NULL)
     course = models.ForeignKey(Course, null=True, on_delete=models.SET_NULL)
-    history = HistoricalRecords()	
+    #history = HistoricalRecords()	

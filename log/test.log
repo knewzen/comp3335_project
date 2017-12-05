@@ -1300,3 +1300,99 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 9: 'hi
 2017-12-05 00:38:06,157:INFO:request course detail success: course code = COMP3011
 2017-12-05 00:39:58,364:INFO:insert message: course code = COMP3011, message = I am testing.
 2017-12-05 16:09:52,985:WARNING:Not Found: /favicon.ico
+2017-12-05 20:09:29,727:WARNING:Not Found: /favicon.ico
+2017-12-05 20:10:01,604:INFO:request course list for dashboard
+2017-12-05 20:10:04,574:INFO:request course detail success: course code = COMP3335
+2017-12-05 20:10:09,902:ERROR:Internal Server Error: /dashboard/getmessage/
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.ProgrammingError: (1146, "Table 'DEV.message_historicalmessage' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiating/dbsec/testing/comp3335_project/comp3335/dashboard/views.py", line 106, in getmessage
+    msg = Message.objects.create(text=msg_encrypt(message),user=user,course=course,timestamp=time)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/home/xiating/.local/lib/python3.5/site-packages/simple_history/models.py", line 255, in post_save
+    self.create_historical_record(instance, created and '+' or '~')
+  File "/home/xiating/.local/lib/python3.5/site-packages/simple_history/models.py", line 270, in create_historical_record
+    history_change_reason=history_change_reason, **attrs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/base.py", line 838, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/base.py", line 924, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/base.py", line 963, in _do_insert
+    using=using, raw=raw)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1107, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/xiating/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/xiating/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'DEV.message_historicalmessage' doesn't exist")
+2017-12-05 20:11:12,364:INFO:insert message: course code = COMP3335, message = hello
+2017-12-05 20:11:18,608:INFO:insert message: course code = COMP3335, message = ni hao
+2017-12-05 20:11:25,302:INFO:insert message: course code = COMP3335, message = zhe ke zen me ban
